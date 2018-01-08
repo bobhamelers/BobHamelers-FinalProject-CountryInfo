@@ -9,13 +9,13 @@ Studentnumber: 11055901
 2. problem and solution
 3. visual sketch
 4. main features
-  4.1. minimum viable product (mvp)
-  4.2. optional parts
+    1. minimum viable product (mvp)
+    2. optional parts
 5. prerequisites
-  5.1. data sources
-  5.2. external components
-  5.3. similar apps
-  5.4. hardest parts (by beginning)
+    1. data sources
+    2. external components
+    3. similar apps
+    4. hardest parts (by beginning)
 
 
 ## Summary
