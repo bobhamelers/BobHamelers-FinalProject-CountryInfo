@@ -31,24 +31,25 @@ For many kinds of subjects it is useful to quickly have an app that displays inf
 2. Import information per country of all countries.
 3. Import an image of all countries, show it and show its place in the world.
 4. Make a searcher for countries.
-5. Add countries to a favourite list. 
-6. Give countries points for a list. 
-7. Traveled country page.
-8. A login page to save user data and changes. 
-
+5. Save countries to a favourite list or traveled list. 
+6. Give countries points for a list (likeable/review points for example). 
+7. A login page to save user data and changes. 
 
 ### Minimum Viable Product (MVP)
 1. Import a list of all countries.
-2. Import information per country of all countries.
-3. Make a login to store user information. 
+2. Import specific information per country of all countries.
+3. Make a working search engine for countries.
+4. Save countries and give countries likeable/review points.
+5. Make a login to store user information.
 
 ### Optional Parts
-1. Better search function (for example on language or regio or maybe interests)
-2. Different quizes about countries
-3. Extra Wikipedia information (think of history, demography, geography etc.)
-4. GEOchart anime (difficult)
-5. Screenshot function
-6. Share Country information info. 
+1. Import images and Google Maps API (for place in world).
+2. Share county information.
+3. Better search function (for example on language or regio or maybe interests).
+4. Different quizes about countries.
+5. Extra Wikipedia information (think of history, demography, geography etc.).
+6. GEOchart anime (difficult).
+7. Screenshot function.
 
 ## Prerequisites
 
@@ -57,6 +58,9 @@ For many kinds of subjects it is useful to quickly have an app that displays inf
 
 ### External Components
 1. [FireBase](https://firebase.google.com)
+2. [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) Eventually
+3. [PermisionScope](https://github.com/nickoneill/PermissionScope) Eventually
+4. [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) Eventually
 
 ### Similar Apps
 I have looked at various apps in the AppStore. First of all, there is an App from the Ministry of Foreign Affairs that gives travel advices per country, but not standard information per country. A user can click on countries, can see a map and traveladvices, can favorite the country and can see the location and contact details of the embassy (with google maps). There is also an information page for foreign rules and an About this App.  
