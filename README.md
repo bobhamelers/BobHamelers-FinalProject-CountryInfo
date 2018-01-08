@@ -1,8 +1,11 @@
 # BobHamelers-FinalProject-CountryInfo
 
 Title: CountryInfo
+
 Name: Bob Hamelers
+
 Studentnumber: 11055901
+
 
 ### Paragraph Summary
 1. summary
