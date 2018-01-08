@@ -28,6 +28,7 @@ This is an app that provides a lot of information about a specific country in a 
 For many kinds of subjects it is useful to quickly have an app that displays information per country. Currently this app does not exist yet. First of all, it is useful for pupils, students and researchers to get information about a specific country if they need it when writing about things in a certain country or when reading information about a particular country in order to have good background knowledge (think for example of historical causes for wars with NEIGHBORING COUNTRIES, for example the geographic LOCATION of a country or information about which LANGUAGES are spoken in a country for language studies). In addition, it is useful for anyone who wants to go or will go on a trip. It is good to be prepared for travel and to have the basic information of a country ready in advance. An example of this is that it is good to know which LANGUAGE is discussed in a country (so that you do not end up being inconvenienced) and it is useful to know which CURRENCY a country uses.
 
 ## Visual Sketch
+![alt text](https://raw.githubusercontent.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/master/doc./Screenshot%20Visual%20Sketch%20Minimum%20Viable%20Product.png)
 
 ## Main Features
 1. Import a list of all countries.
