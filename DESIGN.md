@@ -24,7 +24,7 @@ Modules | Classes | Functions | Database | API
 Login Screen | UIViewController (One) | Login (Action) and Keyboard | Yes, User Swift file | No
 Signup Screen | UIViewController (Two) | Signup (Action) (Google and Facebook (Action)) and Keyboard | Yes, User Swift file | No
 Loading Screen | UIViewController (Three) | Cancel | No | Yes, load countries from JSON API
-Countries Screen | UITableViewController (One) | Logout (Action), show countries and click on country | No | Yes, countries from JSON API
+Countries Screen | UITableViewController (One) | Logout (Action), show countries and click on country | No | Yes, load countries from JSON API
 Country Screen | UIViewController (Four) | Add to favorites, (give points) | Yes, push information to Database | Yes, load information of a country from JSON API
 Lists Screen | UITableViewController (Two) | Show Lists | Yes, asks lists from a user in Database | Yes, load countries from JSON API
 Make List Screen | UITableViewController (Three) | Show countries from API | No | Yes, load countries from JSON API
