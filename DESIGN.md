@@ -80,6 +80,7 @@ The country screen will use number 2 up to and including 9.
 
 
 Usertable:
+
 Fields | Type
 ------ | ----
 Username | String
@@ -89,14 +90,16 @@ Email | String
 
 
 Liststable:
+
 Fields | Type
 ------ | ----
-Listname1 | String
-Listname2 | String
+Listtable1 | String or Link
+Listtable2 | String or Link
 ETC. | ETC.
 
 
 Listtable:
+
 Fields | Type
 ------ | ----
 CountryCode | String
