@@ -23,15 +23,15 @@ Modules | Classes | Functions | Database | API
 ------- | ------- | --------- | -------- | ---
 Login Screen | UIViewController (One) | Login (Action) and Keyboard | Yes, User Swift file | No
 Signup Screen | UIViewController (Two) | Signup (Action) (Google and Facebook (Action)) and Keyboard | Yes, User Swift file | No
-Loading Screen | UIViewController (Three) | Cancel | No | Yes, Countries from JSON API
-Countries Screen | UITableViewController (One) | 
-Country Screen | UIViewController (Four) | 
-Lists Screen | UITableViewController (Two) | 
-Make List Screen | UITableViewController (Three) | 
-Search Screen (One) | UITableViewController (Four) | 
-(Specific) List Screen | UITableViewController (Five) | 
-Change List Screen | UITableViewController (Six) | 
-Search Screen (Two) | UITableViewController (Seven) | 
+Loading Screen | UIViewController (Three) | Cancel | No | Yes, load countries from JSON API
+Countries Screen | UITableViewController (One) | Logout (Action), show countries and click on country | No | Yes, countries from JSON API
+Country Screen | UIViewController (Four) | Add to favorites, (give points) | Yes, push information to Database | Yes, load information of a country from JSON API
+Lists Screen | UITableViewController (Two) | Show Lists | Yes, asks lists from a user in Database | Yes, load countries from JSON API
+Make List Screen | UITableViewController (Three) | Show countries from API | No | Yes, load countries from JSON API
+Search Screen (One) | UITableViewController (Four) | Search on name (and other information) | No | Yes, load countries from JSON API
+(Specific) List Screen | UITableViewController (Five) | Show countries from Database | Yes, countries from Database | Yes, load countries from JSON API
+Change List Screen | UITableViewController (Six) | Show countries from Database and from API | Yes, countries from Database | Yes, load countries from JSON API
+Search Screen (Two) | UITableViewController (Seven) | Search on name (and other information) | No | Yes, load countries from JSON API
 
 ## List of APIs and Frameworks or Plugins
 
