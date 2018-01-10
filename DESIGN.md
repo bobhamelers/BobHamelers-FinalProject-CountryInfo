@@ -18,6 +18,7 @@ Studentnumber: 11055901
 
 
 ## Visual Comprehensive Design of Minimum Viable Product (MVP)
+![alt text](https://raw.githubusercontent.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/master/doc./Visualisation.png)
 
 ## Diagram of Utility Modules, Classes and Functions (without UIViewController lifecycle (like ViewDidLoad) and without Segue Preparation (see Visual Comprehensive Design))
 
