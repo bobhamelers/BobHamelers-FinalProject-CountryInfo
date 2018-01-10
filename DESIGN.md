@@ -12,6 +12,8 @@ Studentnumber: 11055901
 2. Diagram of Utility Modules, Classes and Functions
 3. List of APIs and Frameworks or Plugins or Pods or Libraries
 4. List of Data Sources
+    1. Lists
+    2. Use in Screens
 5. List of Database Tables and Fields (and their Types)
 
 
@@ -41,8 +43,24 @@ Search Screen (Two) | UITableViewController (Seven) | Search on name (and other 
 5. [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) Eventually
 
 ## List of Data Sources
+
+### Data
 1. [All Countries with information](https://restcountries.eu/rest/v2/all)
-2. [Country based on country code with ISO 3166-1 2-letter or 3-letter country code](https://restcountries.eu/rest/v2/alpha/{code}) Not with name, because different spelling (TheUnitedStates/UnitedStatesofAmerica) and different names (America/UnitedStates)
+
+To use the links below, you have to do the following. 
+https://restcountries.eu/rest/v2/ is the standard link.
+
+After the last backslash the subject will be defined by the link (so for example capital). 
+https://restcountries.eu/rest/v2/capital/{FILL IN}.
+By {FILL IN} you have to fill in an example, as example Amsterdam.
+
+So, to use te links below, you have to change the information after the last backslash (/).
+
+
+2. [Country based on country code with ISO 3166-1 2-letter or 3-letter country code](https://restcountries.eu/rest/v2/alpha/{code}) 
+
+Not recommended here with name, because different spelling (TheUnitedStates/UnitedStatesofAmerica) and different names (America/UnitedStates)
+
 3. [Currency with ISO 4217 currency code](https://restcountries.eu/rest/v2/currency/{currency})
 4. [Language with ISO 639-1 language code](https://restcountries.eu/rest/v2/lang/{et})
 5. [Capital city by name](https://restcountries.eu/rest/v2/capital/{capital})
@@ -51,4 +69,12 @@ Search Screen (Two) | UITableViewController (Seven) | Search on name (and other 
 8. [Regional Bloc, EU (European Union), EFTA (European Free Trade Association), CARICOM (Caribbean Community), PA (Pacific Alliance), AU (African Union), USAN (Union of South American Nations), EEU (Eurasian Economic Union), AL (Arab League), ASEAN (Association of Southeast Asian Nations), CAIS (Central American Integration System), CEFTA (Central European Free Trade Agreement), NAFTA (North American Free Trade Agreement), SAARC (South Asian Association for Regional Cooperation)](https://restcountries.eu/rest/v2/regionalbloc/{regionalbloc})
 9. More information like flags, timezone, borders, subregions etc., that are not reachable without countrycode/countryname.
 
+### Use in Screens
+
+The loading screen, the countries screen, lists screen, make list screen, search screen (one), (specific) list screen, change list screen, search screen (two) will use number 1 (all countries) and number 2 (specific countries). 
+
+The country screen will use number 2 up to and including 9.
+
 ## List of Database Tables and Fields (and their Types)
+
+
