@@ -35,12 +35,13 @@ Search Screen (One) | UITableViewController (Four) | Search on name (and other i
 Change List Screen | UITableViewController (Six) | Show countries from Database and from API | Yes, countries from Database | Yes, load countries from JSON API
 Search Screen (Two) | UITableViewController (Seven) | Search on name (and other information) | No | Yes, load countries from JSON API
 
-## List of APIs and Frameworks or Plugins or Pods or Libraries
+## List of APIs and Frameworks or Plugins or Pods or Libraries of Minimum Viable Product (MVP)
 1. [Information per country API](https://restcountries.eu)
 2. [FireBase](https://firebase.google.com) (with CocoaPods)
 3. [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) Eventually
 4. [PermisionScope](https://github.com/nickoneill/PermissionScope) Eventually
 5. [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) Eventually
+6. Eventually more then number 1 and 2 and maybe others than nummber 3, 4, 5. 
 
 ## List of Data Sources
 
@@ -75,6 +76,28 @@ The loading screen, the countries screen, lists screen, make list screen, search
 
 The country screen will use number 2 up to and including 9.
 
-## List of Database Tables and Fields (and their Types)
+## List of Database Tables and Fields and their Types
 
+
+Usertable:
+Fields | Type
+------ | ----
+Username | String
+Password | String
+Email | String
+(Shortcut Google/Facebook) | String
+
+
+Liststable:
+Fields | Type
+------ | ----
+Listname1 | String
+Listname2 | String
+ETC. | ETC.
+
+
+Listtable:
+Fields | Type
+------ | ----
+CountryCode | String
 
