@@ -10,7 +10,7 @@ Studentnumber: 11055901
 ### Paragraph Summary
 1. Visual Comprehensive Design of Minimum Viable Product (MVP)
 2. Diagram of Utility Modules, Classes and Functions
-3. List of APIs and Frameworks or Plugins
+3. List of APIs and Frameworks or Plugins or Pods or Libraries
 4. List of Data Sources
 5. List of Database Tables and Fields (and their Types)
 
@@ -33,8 +33,22 @@ Search Screen (One) | UITableViewController (Four) | Search on name (and other i
 Change List Screen | UITableViewController (Six) | Show countries from Database and from API | Yes, countries from Database | Yes, load countries from JSON API
 Search Screen (Two) | UITableViewController (Seven) | Search on name (and other information) | No | Yes, load countries from JSON API
 
-## List of APIs and Frameworks or Plugins
+## List of APIs and Frameworks or Plugins or Pods or Libraries
+1. [Information per country API](https://restcountries.eu)
+2. [FireBase](https://firebase.google.com) (with CocoaPods)
+3. [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) Eventually
+4. [PermisionScope](https://github.com/nickoneill/PermissionScope) Eventually
+5. [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) Eventually
 
 ## List of Data Sources
+1. [All Countries with information](https://restcountries.eu/rest/v2/all)
+2. [Country based on country code with ISO 3166-1 2-letter or 3-letter country code](https://restcountries.eu/rest/v2/alpha/{code}) Not with name, because different spelling (TheUnitedStates/UnitedStatesofAmerica) and different names (America/UnitedStates)
+3. [Currency with ISO 4217 currency code](https://restcountries.eu/rest/v2/currency/{currency})
+4. [Language with ISO 639-1 language code](https://restcountries.eu/rest/v2/lang/{et})
+5. [Capital city by name](https://restcountries.eu/rest/v2/capital/{capital})
+6. [Calling code per country](https://restcountries.eu/rest/v2/callingcode/{callingcode})
+7. [Region, search by region: Africa, Americas, Asia, Europe, Oceania](https://restcountries.eu/rest/v2/region/{region})
+8. [Regional Bloc, EU (European Union), EFTA (European Free Trade Association), CARICOM (Caribbean Community), PA (Pacific Alliance), AU (African Union), USAN (Union of South American Nations), EEU (Eurasian Economic Union), AL (Arab League), ASEAN (Association of Southeast Asian Nations), CAIS (Central American Integration System), CEFTA (Central European Free Trade Agreement), NAFTA (North American Free Trade Agreement), SAARC (South Asian Association for Regional Cooperation)](https://restcountries.eu/rest/v2/regionalbloc/{regionalbloc})
+9. More information like flags, timezone, borders, subregions etc., that are not reachable without countrycode/countryname.
 
 ## List of Database Tables and Fields (and their Types)
