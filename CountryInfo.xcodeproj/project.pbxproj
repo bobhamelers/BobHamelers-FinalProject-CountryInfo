@@ -17,6 +17,8 @@
 		1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F620039B6C006EAE22 /* Assets.xcassets */; };
 		1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F820039B6C006EAE22 /* LaunchScreen.storyboard */; };
 		1833F902200779F1006EAE22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1833F901200779F1006EAE22 /* GoogleService-Info.plist */; };
+		18C67FE92008F9F700E4B84B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FE82008F9F700E4B84B /* Gif.swift */; };
+		18C67FEF200922D000E4B84B /* world.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18C67FEE200922D000E4B84B /* world.gif */; };
 		469DA47F4B8190C64D87CDF0 /* Pods_CountryInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		1833F8F920039B6C006EAE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1833F8FB20039B6C006EAE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1833F901200779F1006EAE22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18C67FE82008F9F700E4B84B /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		18C67FEE200922D000E4B84B /* world.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = world.gif; sourceTree = "<group>"; };
 		6B16FBD3FAEB639EDFD614AD /* Pods-CountryInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryInfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo.release.xcconfig"; sourceTree = "<group>"; };
 		F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +86,7 @@
 			children = (
 				180E64552007F13C008408EF /* Countries.swift */,
 				180E64592007F237008408EF /* User.swift */,
+				18C67FE82008F9F700E4B84B /* Gif.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1833F8EF20039B6B006EAE22 /* AppDelegate.swift */,
+				18C67FEE200922D000E4B84B /* world.gif */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C67FEF200922D000E4B84B /* world.gif in Resources */,
 				1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */,
 				1833F902200779F1006EAE22 /* GoogleService-Info.plist in Resources */,
 				1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */,
@@ -213,13 +220,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CountryInfo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C58846033EB1A7942307DAE5 /* [CP] Copy Pods Resources */ = {
@@ -243,9 +253,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -264,6 +283,7 @@
 				180E645A2007F237008408EF /* User.swift in Sources */,
 				180E64502007A537008408EF /* SignUpViewController.swift in Sources */,
 				180E64562007F13C008408EF /* Countries.swift in Sources */,
+				18C67FE92008F9F700E4B84B /* Gif.swift in Sources */,
 				1833F8F020039B6B006EAE22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TS7KSAC4XR;
 				INFOPLIST_FILE = CountryInfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TS7KSAC4XR;
 				INFOPLIST_FILE = CountryInfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
