@@ -176,26 +176,15 @@
             </objects>
             <point key="canvasLocation" x="340" y="873.91304347826099"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Countries Table View Controller-->
         <scene sceneID="8Lr-NA-bOY">
             <objects>
-                <viewController id="eLE-UV-RWs" customClass="UITableViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dgb-7l-mb0">
+                <viewController id="eLE-UV-RWs" customClass="CountriesTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R1v-8K-S9V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKM-Dk-CcN">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="6yI-Um-9CJ" kind="show" id="TL8-OZ-17X"/>
-                                </connections>
-                            </button>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="0nT-SD-v9n"/>
-                    </view>
+                    </tableView>
                     <navigationItem key="navigationItem" id="SmY-Bu-X15">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6im-gc-bgp">
                             <connections>
@@ -208,30 +197,19 @@
             </objects>
             <point key="canvasLocation" x="2959" y="467"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Countries Table View Controller-->
         <scene sceneID="TmA-q7-ZYt">
             <objects>
-                <viewController id="BY5-sg-A37" customClass="UITableViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cAc-Xb-MGr">
+                <viewController id="BY5-sg-A37" customClass="CountriesTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bwh-Xi-YR8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAr-wx-Ttb">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="cX3-Ea-Std" kind="show" id="9U7-Ty-hvD"/>
-                                </connections>
-                            </button>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="YCI-cW-qhs"/>
-                    </view>
+                    </tableView>
                     <navigationItem key="navigationItem" id="fJj-aJ-QN0">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Lbx-j3-0sa">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="GSH-k9-9zf"/>
+                                <action selector="logoutDidTouch:" destination="BY5-sg-A37" id="FoK-8e-NAW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -243,6 +221,7 @@
         <!--Table View Controller-->
         <scene sceneID="n0o-Le-JQ2">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LVt-uS-te0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="cX3-Ea-Std" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7P-3v-QlO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -264,7 +243,6 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LVt-uS-te0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3721" y="-197"/>
         </scene>
@@ -467,6 +445,5 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="5Ce-o5-Qrl"/>
-        <segue reference="7ij-Zq-mVy"/>
     </inferredMetricsTieBreakers>
 </document>

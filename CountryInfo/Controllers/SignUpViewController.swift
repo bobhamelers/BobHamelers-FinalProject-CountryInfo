@@ -35,9 +35,11 @@ class SignUpViewController: UIViewController {
         
         if textFieldSignUpPassword.text!.count < 6 {
             self.createAlert(title: "FAILURE", message: "Your password has to be 6 characters or longer.")}
-        Auth.auth().createUser(withEmail: textFieldSignUpPassword.text!,
+        print("yes")
+        Auth.auth().createUser(withEmail: textFieldSignUpEmail.text!,
                                password: textFieldSignUpPassword.text!) { user, error in
                                 if error == nil {
+                                    print("yes")
                                     Auth.auth().signIn(withEmail: self.textFieldSignUpEmail.text!,
                                                        password: self.textFieldSignUpPassword.text!)
                                 }
