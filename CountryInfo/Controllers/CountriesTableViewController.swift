@@ -11,8 +11,11 @@ import UIKit
 
 class CountriesTableViewController: UITableViewController {
     
-    // MARK: Actions
+    // MARK: Properties
+    let countryInfoController = CountryInfoController()
+//    var information = Information()
     
+    // MARK: Actions
     @IBAction func logoutDidTouch(_ sender: AnyObject) {
         try! Auth.auth().signOut()
         dismiss(animated: true, completion: nil)
@@ -21,6 +24,10 @@ class CountriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        countryInfoController.fetchCompletion { (inof) in
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

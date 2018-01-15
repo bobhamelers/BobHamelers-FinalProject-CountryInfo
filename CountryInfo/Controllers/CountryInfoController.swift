@@ -12,21 +12,27 @@ import Foundation
 class CountryInfoController {
 
     // MARK: Global Constant shared CountryInfoController
-    static let shared = CountryInfoController()
+//    static let shared = CountryInfoController()
     
     // MARK: Completion function to decode JSON from API with checks
-//    func fetchCompletion(completion: @escaping ([Countries]?) -> Void) {
-//        let url = URL(string: "https://restcountries.eu/rest/v2/all")!
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            let jsonDecoder = JSONDecoder()
-//            if let data = data,
-//                let countries = try? jsonDecoder.decode(Countries.self, from: data) {
-//                completion(countries.countries)
-//            } else {
-//                completion(nil)
-//            }
-//        }
-//        task.resume()
-//    }
+    func fetchCompletion(completion: @escaping ([Information]?) -> Void) {
+        let url = URL(string: "https://restcountries.eu/rest/v2/all")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            if let data = data {
+                do {
+                    let information = try jsonDecoder.decode([Information].self, from: data)
+                    completion(information)
+                    print(information)
+                } catch {
+                    print(error)
+                }
+            } else {
+                completion(nil)
+                return
+            }
+        }
+        task.resume()
+    }
 }
 

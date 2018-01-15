@@ -20,6 +20,7 @@
 		18C67FE92008F9F700E4B84B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FE82008F9F700E4B84B /* Gif.swift */; };
 		18C67FEF200922D000E4B84B /* world.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18C67FEE200922D000E4B84B /* world.gif */; };
 		18C67FF1200CCA5300E4B84B /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */; };
+		18C67FF7200CDB7B00E4B84B /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FF2200CDB7A00E4B84B /* Information.swift */; };
 		469DA47F4B8190C64D87CDF0 /* Pods_CountryInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		18C67FE82008F9F700E4B84B /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		18C67FEE200922D000E4B84B /* world.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = world.gif; sourceTree = "<group>"; };
 		18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountriesTableViewController.swift; path = CountryInfo/Controllers/CountriesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		18C67FF2200CDB7A00E4B84B /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Information.swift; path = ../../../../../Downloads/codegen_5a5ca1a97dc3b/Information.swift; sourceTree = "<group>"; };
+		18C67FFC200CFA0200E4B84B /* CountryInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountryInfo.entitlements; sourceTree = "<group>"; };
 		6B16FBD3FAEB639EDFD614AD /* Pods-CountryInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryInfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo.release.xcconfig"; sourceTree = "<group>"; };
 		F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +90,7 @@
 		180E644B20079CDE008408EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18C67FF2200CDB7A00E4B84B /* Information.swift */,
 				180E64552007F13C008408EF /* Countries.swift */,
 				180E64592007F237008408EF /* User.swift */,
 				18C67FE82008F9F700E4B84B /* Gif.swift */,
@@ -124,6 +128,7 @@
 		1833F8EE20039B6B006EAE22 /* CountryInfo */ = {
 			isa = PBXGroup;
 			children = (
+				18C67FFC200CFA0200E4B84B /* CountryInfo.entitlements */,
 				180E644920079CCA008408EF /* Controllers */,
 				180E644B20079CDE008408EF /* Models */,
 				180E644C20079CFB008408EF /* Other */,
@@ -180,6 +185,11 @@
 					1833F8EB20039B6B006EAE22 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -283,6 +293,7 @@
 			files = (
 				18C67FF1200CCA5300E4B84B /* CountriesTableViewController.swift in Sources */,
 				180E644E20079DFB008408EF /* LoginViewController.swift in Sources */,
+				18C67FF7200CDB7B00E4B84B /* Information.swift in Sources */,
 				1833F8F220039B6B006EAE22 /* CountryInfoController.swift in Sources */,
 				180E645A2007F237008408EF /* User.swift in Sources */,
 				180E64502007A537008408EF /* SignUpViewController.swift in Sources */,
@@ -426,6 +437,7 @@
 			baseConfigurationReference = 071466D5E86223CC577FA92C /* Pods-CountryInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CountryInfo/CountryInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TS7KSAC4XR;
 				INFOPLIST_FILE = CountryInfo/Info.plist;
@@ -443,6 +455,7 @@
 			baseConfigurationReference = 6B16FBD3FAEB639EDFD614AD /* Pods-CountryInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CountryInfo/CountryInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TS7KSAC4XR;
 				INFOPLIST_FILE = CountryInfo/Info.plist;
