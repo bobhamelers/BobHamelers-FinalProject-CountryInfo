@@ -12,7 +12,7 @@ import Foundation
 class CountryInfoController {
 
     // MARK: Global Constant shared CountryInfoController
-//    static let shared = CountryInfoController()
+    static let shared = CountryInfoController()
     
     // MARK: Completion function to decode JSON from API with checks
     func fetchCompletion(completion: @escaping ([Information]?) -> Void) {
@@ -23,7 +23,7 @@ class CountryInfoController {
                 do {
                     let information = try jsonDecoder.decode([Information].self, from: data)
                     completion(information)
-                    print(information)
+//                    print(information)
                 } catch {
                     print(error)
                 }
