@@ -39,7 +39,6 @@ class CountriesTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,6 +60,20 @@ class CountriesTableViewController: UITableViewController {
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
-        cell.textLabel?.text = information.name
+        cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
+    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        prepare(for: UIStoryboardSegue, sender: Any?)
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue,
+                          sender: Any?) {
+        if segue.identifier == "CountrySegue" {
+            let index = self.tableView.indexPathForSelectedRow!.row
+            let CountryTableViewController = segue.destination as!
+            CountryTableViewController
+            CountryTableViewController.countryInfo = [informations[index]]
+        }
+        // Prepare for CountryViewController
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		180E644E20079DFB008408EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E644D20079DFB008408EF /* LoginViewController.swift */; };
 		180E64502007A537008408EF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E644F2007A537008408EF /* SignUpViewController.swift */; };
-		180E64562007F13C008408EF /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E64552007F13C008408EF /* Countries.swift */; };
 		180E645A2007F237008408EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E64592007F237008408EF /* User.swift */; };
 		1833F8F020039B6B006EAE22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833F8EF20039B6B006EAE22 /* AppDelegate.swift */; };
 		1833F8F220039B6B006EAE22 /* CountryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833F8F120039B6B006EAE22 /* CountryInfoController.swift */; };
@@ -21,6 +20,7 @@
 		18C67FEF200922D000E4B84B /* world.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18C67FEE200922D000E4B84B /* world.gif */; };
 		18C67FF1200CCA5300E4B84B /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */; };
 		18C67FF7200CDB7B00E4B84B /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FF2200CDB7A00E4B84B /* Information.swift */; };
+		18C67FFE200F771900E4B84B /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FFD200F771800E4B84B /* CountryTableViewController.swift */; };
 		469DA47F4B8190C64D87CDF0 /* Pods_CountryInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,6 @@
 		071466D5E86223CC577FA92C /* Pods-CountryInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryInfo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		180E644D20079DFB008408EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = CountryInfo/Controllers/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		180E644F2007A537008408EF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CountryInfo/Controllers/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
-		180E64552007F13C008408EF /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Countries.swift; path = CountryInfo/Models/Countries.swift; sourceTree = SOURCE_ROOT; };
 		180E64592007F237008408EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1833F8EC20039B6B006EAE22 /* CountryInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1833F8EF20039B6B006EAE22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountriesTableViewController.swift; path = CountryInfo/Controllers/CountriesTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		18C67FF2200CDB7A00E4B84B /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Information.swift; path = ../../../../../Downloads/codegen_5a5ca1a97dc3b/Information.swift; sourceTree = "<group>"; };
 		18C67FFC200CFA0200E4B84B /* CountryInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountryInfo.entitlements; sourceTree = "<group>"; };
+		18C67FFD200F771800E4B84B /* CountryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryTableViewController.swift; path = CountryInfo/Controllers/CountryTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		6B16FBD3FAEB639EDFD614AD /* Pods-CountryInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryInfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo.release.xcconfig"; sourceTree = "<group>"; };
 		F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,8 +70,9 @@
 		180E644920079CCA008408EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */,
 				1833F8F120039B6B006EAE22 /* CountryInfoController.swift */,
+				18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */,
+				18C67FFD200F771800E4B84B /* CountryTableViewController.swift */,
 				180E644D20079DFB008408EF /* LoginViewController.swift */,
 				180E644F2007A537008408EF /* SignUpViewController.swift */,
 			);
@@ -91,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				18C67FF2200CDB7A00E4B84B /* Information.swift */,
-				180E64552007F13C008408EF /* Countries.swift */,
 				180E64592007F237008408EF /* User.swift */,
 				18C67FE82008F9F700E4B84B /* Gif.swift */,
 			);
@@ -291,13 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C67FFE200F771900E4B84B /* CountryTableViewController.swift in Sources */,
 				18C67FF1200CCA5300E4B84B /* CountriesTableViewController.swift in Sources */,
 				180E644E20079DFB008408EF /* LoginViewController.swift in Sources */,
 				18C67FF7200CDB7B00E4B84B /* Information.swift in Sources */,
 				1833F8F220039B6B006EAE22 /* CountryInfoController.swift in Sources */,
 				180E645A2007F237008408EF /* User.swift in Sources */,
 				180E64502007A537008408EF /* SignUpViewController.swift in Sources */,
-				180E64562007F13C008408EF /* Countries.swift in Sources */,
 				18C67FE92008F9F700E4B84B /* Gif.swift in Sources */,
 				1833F8F020039B6B006EAE22 /* AppDelegate.swift in Sources */,
 			);
