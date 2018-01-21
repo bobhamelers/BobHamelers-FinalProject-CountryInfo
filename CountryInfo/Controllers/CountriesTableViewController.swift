@@ -9,12 +9,16 @@
 import Firebase
 import UIKit
 
-class CountriesTableViewController: UITableViewController {
+class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     
     // MARK: Properties
     let countryInfoController = CountryInfoController()
     var informations = [Information]()
+    var filteredData = [String]()
+    var isSearching = false
 
+    // MARK: Outlets
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: Actions
     @IBAction func logoutDidTouch(_ sender: AnyObject) {
@@ -31,6 +35,10 @@ class CountriesTableViewController: UITableViewController {
                 self.updateUI(with: info)
                 }
             }
+        
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
         }
     
     func updateUI(with info: [Information]) {
@@ -48,12 +56,25 @@ class CountriesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+//        if isSearching {
+//            return filteredData.count
+//        }
+        
         return informations.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesCellIdentifier", for: indexPath)
+//        if isSearching {
+//            cell.textLabel?.text = filteredData[indexPath.row]
+//        }
+//        else{
+//            configure(cell: cell, forItemAt: indexPath)
+//        }
+//        return cell
+//    }
         configure(cell: cell, forItemAt: indexPath)
         return cell
     }
@@ -64,6 +85,22 @@ class CountriesTableViewController: UITableViewController {
     }
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        prepare(for: UIStoryboardSegue, sender: Any?)
+//    }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchBar.text == nil || searchBar.text == "" {
+//            isSearching = false
+//
+//            view.endEditing(true)
+//
+//            tableView.reloadData()
+//        } else {
+//            isSearching = true
+//
+//            filteredData = informations.filter({$0 == searchBar.text})
+//
+//            tableView.reloadData()
+//        }
 //    }
     
     override func prepare(for segue: UIStoryboardSegue,

@@ -7,6 +7,7 @@
 //
 
 import FirebaseAuth
+import FirebaseDatabase
 import UIKit
 
 class SignUpViewController: UIViewController {
@@ -14,6 +15,7 @@ class SignUpViewController: UIViewController {
     // MARK: Constants
     let signUpSeague = "SignUpSeague"
     let charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
+    var ref: DatabaseReference!
     
     // MARK: Outlets
     @IBOutlet weak var textFieldSignUpEmail: UITextField!
@@ -26,7 +28,7 @@ class SignUpViewController: UIViewController {
         
         if textFieldSignUpEmail.text!.contains("@") == false {
             self.createAlert(title: "FAILURE", message: "You insert an invalid e-mail.")}
-//        if charset.contains(textFieldSignUpUsername.text!) ==
+//        if textFieldSignUpUsername.text!.contains() ==
 //
 //        textFieldSignUpUsername.text!.cointains(charactersIn: ACCEPTABLE_CHARACTERS)
         
@@ -35,6 +37,7 @@ class SignUpViewController: UIViewController {
         
         if textFieldSignUpPassword.text!.count < 6 {
             self.createAlert(title: "FAILURE", message: "Your password has to be 6 characters or longer.")}
+        // SignUp Authentication
         Auth.auth().createUser(withEmail: textFieldSignUpEmail.text!,
                                password: textFieldSignUpPassword.text!) { user, error in
                                 if error == nil {
@@ -42,7 +45,16 @@ class SignUpViewController: UIViewController {
                                                        password: self.textFieldSignUpPassword.text!)
                                 }
         }
-        // SignUp Authentication
+//        // SignUp Database
+//        let user = Auth.auth().currentUser
+//        if let user = user {
+//            let userID: String = user.uid
+//            let userEmail: String = self.textFieldSignUpEmail.text!
+//            let userPassword: String = self.textFieldSignUpPassword.text!
+//            //        let userUsername: String = self.textFieldSignUpUsername.text!
+//            
+//            self.ref.child("Users").child(userID).setValue(["Email": userEmail, "Password": userPassword])
+//        }
     }
     
     // MARK: Function, DismissKeyboard
@@ -56,6 +68,8 @@ class SignUpViewController: UIViewController {
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)

@@ -14,26 +14,47 @@ class CountryTableViewController: UITableViewController {
     let countryInfoController = CountryInfoController()
     var informations = [Information]()
     var countryInfo = [Information]()
-    
-    // MARK: Outlets
-    
-    @IBOutlet weak var labelCountryName: UILabel!
+//    let numberOfRowsAtSection: [Int] = [1, 4, 2, 6, self.countryInfo.RegionalBlocks.count self.countryInfo.Currencies.count, self.countryInfo.Languages.count]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(countryInfo)
         self.updateUI(with: countryInfo)
     }
 
     func updateUI(with countryInfo: [Information]) {
         DispatchQueue.main.async {
-            self.information(with: countryInfo)
+//            self.information(with: countryInfo)
             self.tableView.reloadData()
         }
     }
     
-    func information(with countryInfo: [Information]) {
-        labelCountryName.text = countryInfo[0].name
-    }
+//    func information(with countryInfo: [Information]) {
+//        labelCountryName.text = countryInfo[0].name
+//
+//        labelAlphaTwo.text = countryInfo[0].alpha2Code
+//        labelAlphaThree.text = countryInfo[0].alpha3Code
+//        labelNumericCode.text = countryInfo[0].numericCode
+//        labelInternetCodes.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
+//
+//        labelCallingCodes.text = countryInfo[0].callingCodes!.joined(separator: ", ")
+//        labelTimezones.text = countryInfo[0].timezones!.joined(separator: ", ")
+//
+//        labelCapital.text = countryInfo[0].capital
+//        labelRegion.text = countryInfo[0].region
+//        labelSubregion.text = countryInfo[0].subregion
+//        labelBorders.text = countryInfo[0].borders!.joined(separator: ", ")
+//        labelPopulation.text = "\(String(describing: countryInfo[0].population))"
+//        labelDemonym.text = countryInfo[0].demonym
+//
+//        let countOne = countryInfo.first?.regionalBlocs!.count
+//        let countTwo = countryInfo.first?.currencies!.count
+//        let countThree = countryInfo.first?.languages!.count
+//
+//        labelRegionalBlocs.text = countryInfo[0].regionalBlocs
+//        labelCurrencies.text = countryInfo[0].currencies
+//        labelLanguages.text = countryInfo[0].languages
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,41 +64,70 @@ class CountryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 7
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        switch (section) {
+        case 0:
+            return 1
+        case 1:
+            return 4
+        case 2:
+            return 2
+        case 3:
+            return 6
+        case 4:
+            return countryInfo[0].regionalBlocs!.count
+        case 5:
+            return countryInfo[0].currencies!.count
+        case 6:
+            return countryInfo[0].languages!.count
+        default:
+            return 0
+        }
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
+        switch (indexPath.section) {
+        case 0:
+            cell.labelCountryName.text = countryInfo[0].name
+            return cell
+        case 1:
+            cell.labelAlphaTwo.text = countryInfo[0].alpha2Code
+            cell.labelAlphaThree.text = countryInfo[0].alpha3Code
+            cell.labelNumericCode.text = countryInfo[0].numericCode
+            cell.labelInternetCodes.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
+            return cell
+        case 2:
+            cell.labelCallingCodes.text = countryInfo[0].callingCodes!.joined(separator: ", ")
+            cell.labelTimezones.text = countryInfo[0].timezones!.joined(separator: ", ")
+            return cell
+        case 3:
+            cell.labelCapital.text = countryInfo[0].capital
+            cell.labelRegion.text = countryInfo[0].region
+            cell.labelSubregion.text = countryInfo[0].subregion
+            cell.labelBorders.text = countryInfo[0].borders!.joined(separator: ", ")
+            cell.labelPopulation.text = "\(String(describing: countryInfo[0].population))"
+            cell.labelDemonym.text = countryInfo[0].demonym
+            return cell
+//        case 4:
+////            let countOne = countryInfo.first?.regionalBlocs!.count
+//            cell.labelRegionalBlocs.text = countryInfo[0].regionalBlocs! as? String
+//            return cell
+//        case 5:
+////            let countTwo = countryInfo.first?.currencies!.count
+//            cell.labelCurrencies.text = countryInfo[0].currencies! as? String
+//            return cell
+//        case 6:
+////            let countThree = countryInfo.first?.languages!.count
+//            cell.labelLanguages.text = countryInfo[0].languages! as? String
+//            return cell
+        
+        default: break
+            
+        }
+        return UITableViewCell()
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
