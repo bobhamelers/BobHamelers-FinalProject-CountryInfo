@@ -94,7 +94,7 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
         } else {
             isSearching = true
 
-            filteredData = informations.filter({$0.name! == searchBar.text})
+            filteredData = informations.filter({$0.name!.contains(searchBar.text as! String) || $0.alpha2Code!.lowercased() == searchBar.text?.lowercased() as! String})
 
             tableView.reloadData()
         }
@@ -103,6 +103,12 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
         if segue.identifier == "CountrySegue" {
+//            if isSearching == true {
+//
+//                let currentCellLabel = (tableView.cellForRow(at: tableView.indexPathForSelectedRow!)?.textLabel?.text)
+//
+//                let index = informations.indexOf(currentCellLabel)
+//            }
             let index = self.tableView.indexPathForSelectedRow!.row
             let CountryTableViewController = segue.destination as!
             CountryTableViewController
