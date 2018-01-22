@@ -129,7 +129,7 @@ class CountryTableViewController: UITableViewController {
             cell.labelRegion!.text = countryInfo[0].region
             cell.labelSubregion!.text = countryInfo[0].subregion
             cell.labelBorders!.text = countryInfo[0].borders!.joined(separator: ", ")
-            cell.labelPopulation!.text = "\(String(describing: countryInfo[0].population))"
+            cell.labelPopulation!.text = "\(String(describing: countryInfo[0].population!))"
             cell.labelDemonym!.text = countryInfo[0].demonym
             return cell
         case 4:

@@ -30,18 +30,20 @@ class ListFeederTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var info = countriesTableViewController.informations
-        self.updateUI(with: info)
+        self.informations = countryInfoController.infomations
+        print(informations)
+//        var info = countriesTableViewController.informations
+//        self.updateUI(with: info)
         
         updateSaveButtonState()
     }
     
-    func updateUI(with info: [Information]) {
-        DispatchQueue.main.async {
-            self.informations = info
-            self.tableView.reloadData()
-        }
-    }
+//    func updateUI(with info: [Information]) {
+//        DispatchQueue.main.async {
+//            self.informations = info
+//            self.tableView.reloadData()
+//        }
+//    }
     
     func updateSaveButtonState() {
         let text = titleTextField.text ?? ""

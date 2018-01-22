@@ -19,9 +19,7 @@ class ListsTableViewController: UITableViewController {
     let ref = Database.database().reference(withPath: "lists")
     let usersRef = Database.database().reference(withPath: "online")
     var user: User!
-
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
