@@ -89,7 +89,19 @@ class CountryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
+        var identifier: String
+        switch (indexPath.section) {
+        case 0: identifier = "section0Cell"
+        case 1: identifier = "section1Cell"
+        case 2: identifier = "section2Cell"
+        case 3: identifier = "section3Cell"
+        case 4: identifier = "section4Cell"
+        case 5: identifier = "section5Cell"
+        case 6: identifier = "section6Cell"
+        default: identifier = ""
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CountryTableViewCell
         switch (indexPath.section) {
         case 0:
             cell.labelCountryName!.text = countryInfo[0].name
@@ -113,17 +125,16 @@ class CountryTableViewController: UITableViewController {
             cell.labelDemonym!.text = countryInfo[0].demonym
             return cell
         case 4:
-//            let countOne = countryInfo.first?.regionalBlocs!.count
-            cell.labelRegionalBlocs!.text = countryInfo[0].regionalBlocs! as? String
+            let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
+            cell.labelRegionalBlocs!.text = text
             return cell
         case 5:
-//            let countTwo = countryInfo.first?.currencies!.count
-            print(countryInfo[0].currencies!)
-            cell.labelCurrencies!.text = countryInfo[0].currencies! as? String
+            let text = countryInfo[0].currencies![indexPath.row].name! + ", " + countryInfo[0].currencies![indexPath.row].code! + ", " + countryInfo[0].currencies![indexPath.row].symbol!
+            cell.labelCurrencies!.text = text
             return cell
         case 6:
-//            let countThree = countryInfo.first?.languages!.count
-            cell.labelLanguages!.text = countryInfo[0].languages! as? String
+            let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
+            cell.labelLanguages!.text = text
             return cell
         
         default: break
