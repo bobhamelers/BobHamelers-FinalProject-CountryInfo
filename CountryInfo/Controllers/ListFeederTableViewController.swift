@@ -14,11 +14,26 @@ class ListFeederTableViewController: UITableViewController {
     let countryInfoController = CountryInfoController()
     var informations = [Information]()
     let countriesTableViewController = CountriesTableViewController()
+    var list: List?
+    
+    // MARK: Outlets
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    // MARK: Actions
+    @IBAction func returnPressed(_ sender: UITextField) {
+        titleTextField.resignFirstResponder()
+    }
+    @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var info = countriesTableViewController.informations
         self.updateUI(with: info)
+        
+        updateSaveButtonState()
     }
     
     func updateUI(with info: [Information]) {
@@ -26,6 +41,11 @@ class ListFeederTableViewController: UITableViewController {
             self.informations = info
             self.tableView.reloadData()
         }
+    }
+    
+    func updateSaveButtonState() {
+        let text = titleTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 
     override func didReceiveMemoryWarning() {

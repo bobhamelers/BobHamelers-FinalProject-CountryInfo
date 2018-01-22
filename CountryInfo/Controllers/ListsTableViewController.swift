@@ -68,25 +68,25 @@ class ListsTableViewController: UITableViewController {
         }
     }
 
-//    @IBAction func unwindToListFeeder(segue: UIStoryboardSegue) {
-//        guard segue.identifier == "saveUnwind" else { return }
-//        let sourceViewController = segue.source as!
-//        ListFeederTableViewController
-//
-//        if let todo = sourceViewController.list {
-//            if let selectedIndexPath =
-//                tableView.indexPathForSelectedRow {
-//                lists[selectedIndexPath.row] = list
-//                tableView.reloadRows(at: [selectedIndexPath],
-//                                     with: .none)
-//            } else {
-//                let newIndexPath = IndexPath(row: lists.count, section: 0)
-//                lists.append(list)
-//                tableView.insertRows(at: [newIndexPath], with: .automatic)
-//            }
-//        }
-//        List.saveLists(lists)
-//    }
+    @IBAction func unwindToListFeeder(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind" else { return }
+        let sourceViewController = segue.source as!
+        ListFeederTableViewController
+
+        if let list = sourceViewController.list {
+            if let selectedIndexPath =
+                tableView.indexPathForSelectedRow {
+                lists[selectedIndexPath.row] = list
+                tableView.reloadRows(at: [selectedIndexPath],
+                                     with: .none)
+            } else {
+                let newIndexPath = IndexPath(row: lists.count, section: 0)
+                lists.append(list)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+        List.saveLists(lists)
+    }
 //    override func prepare(for segue: UIStoryboardSegue,
 //                          sender: Any?) {
 //        if segue.identifier == "showListDetails" {

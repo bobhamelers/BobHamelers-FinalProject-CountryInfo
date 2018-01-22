@@ -14,6 +14,7 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: Properties
     let countryInfoController = CountryInfoController()
     var informations = [Information]()
+    var countries = [String]()
     var filteredData = [String]()
     var isSearching = false
 
@@ -39,7 +40,11 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        }
+//        for index in informations{
+//            countries.append(index.name!)
+//        }
+//        print(countries)
+    }
     
     func updateUI(with info: [Information]) {
         DispatchQueue.main.async {

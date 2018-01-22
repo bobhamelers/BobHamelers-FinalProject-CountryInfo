@@ -92,38 +92,39 @@ class CountryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
         switch (indexPath.section) {
         case 0:
-            cell.labelCountryName.text = countryInfo[0].name
+            cell.labelCountryName!.text = countryInfo[0].name
             return cell
         case 1:
-            cell.labelAlphaTwo.text = countryInfo[0].alpha2Code
-            cell.labelAlphaThree.text = countryInfo[0].alpha3Code
-            cell.labelNumericCode.text = countryInfo[0].numericCode
-            cell.labelInternetCodes.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
+            cell.labelAlphaTwo!.text = countryInfo[0].alpha2Code
+            cell.labelAlphaThree!.text = countryInfo[0].alpha3Code
+            cell.labelNumericCode!.text = countryInfo[0].numericCode
+            cell.labelInternetCodes!.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
             return cell
         case 2:
-            cell.labelCallingCodes.text = countryInfo[0].callingCodes!.joined(separator: ", ")
-            cell.labelTimezones.text = countryInfo[0].timezones!.joined(separator: ", ")
+            cell.labelCallingCodes!.text = countryInfo[0].callingCodes!.joined(separator: ", ")
+            cell.labelTimezones!.text = countryInfo[0].timezones!.joined(separator: ", ")
             return cell
         case 3:
-            cell.labelCapital.text = countryInfo[0].capital
-            cell.labelRegion.text = countryInfo[0].region
-            cell.labelSubregion.text = countryInfo[0].subregion
-            cell.labelBorders.text = countryInfo[0].borders!.joined(separator: ", ")
-            cell.labelPopulation.text = "\(String(describing: countryInfo[0].population))"
-            cell.labelDemonym.text = countryInfo[0].demonym
+            cell.labelCapital!.text = countryInfo[0].capital
+            cell.labelRegion!.text = countryInfo[0].region
+            cell.labelSubregion!.text = countryInfo[0].subregion
+            cell.labelBorders!.text = countryInfo[0].borders!.joined(separator: ", ")
+            cell.labelPopulation!.text = "\(String(describing: countryInfo[0].population))"
+            cell.labelDemonym!.text = countryInfo[0].demonym
             return cell
-//        case 4:
-////            let countOne = countryInfo.first?.regionalBlocs!.count
-//            cell.labelRegionalBlocs.text = countryInfo[0].regionalBlocs! as? String
-//            return cell
-//        case 5:
-////            let countTwo = countryInfo.first?.currencies!.count
-//            cell.labelCurrencies.text = countryInfo[0].currencies! as? String
-//            return cell
-//        case 6:
-////            let countThree = countryInfo.first?.languages!.count
-//            cell.labelLanguages.text = countryInfo[0].languages! as? String
-//            return cell
+        case 4:
+//            let countOne = countryInfo.first?.regionalBlocs!.count
+            cell.labelRegionalBlocs!.text = countryInfo[0].regionalBlocs! as? String
+            return cell
+        case 5:
+//            let countTwo = countryInfo.first?.currencies!.count
+            print(countryInfo[0].currencies!)
+            cell.labelCurrencies!.text = countryInfo[0].currencies! as? String
+            return cell
+        case 6:
+//            let countThree = countryInfo.first?.languages!.count
+            cell.labelLanguages!.text = countryInfo[0].languages! as? String
+            return cell
         
         default: break
             
