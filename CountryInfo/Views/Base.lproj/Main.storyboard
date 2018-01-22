@@ -318,7 +318,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section0Cell" textLabel="Vtp-sa-5PX" style="IBUITableViewCellStyleDefault" id="bMh-dl-3l2" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section0Cell" textLabel="Vtp-sa-5PX" style="IBUITableViewCellStyleDefault" id="bMh-dl-3l2" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMh-dl-3l2" id="sCB-23-CwM">
@@ -338,7 +338,7 @@
                                     <outlet property="labelCountryName" destination="Vtp-sa-5PX" id="Rie-oU-tB1"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section1Cell" textLabel="Tg4-ku-NVR" style="IBUITableViewCellStyleDefault" id="hF3-1C-Fe0" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section1Cell" textLabel="Tg4-ku-NVR" style="IBUITableViewCellStyleDefault" id="hF3-1C-Fe0" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hF3-1C-Fe0" id="bSD-HK-w9o">
@@ -382,7 +382,7 @@
                                     <outlet property="labelNumericCode" destination="qel-Wf-slT" id="lSW-72-1zy"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section2Cell" textLabel="cyV-ZW-T6a" style="IBUITableViewCellStyleDefault" id="U6u-n7-SOG" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section2Cell" textLabel="cyV-ZW-T6a" style="IBUITableViewCellStyleDefault" id="U6u-n7-SOG" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U6u-n7-SOG" id="bv7-pG-vUA">
@@ -410,7 +410,7 @@
                                     <outlet property="labelTimezones" destination="Pgd-qD-Flt" id="EEm-YA-vpj"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section3Cell" textLabel="Fi2-8n-re2" style="IBUITableViewCellStyleDefault" id="xk7-kY-7tT" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section3Cell" textLabel="Fi2-8n-re2" style="IBUITableViewCellStyleDefault" id="xk7-kY-7tT" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xk7-kY-7tT" id="EKk-dQ-yJm">
@@ -470,7 +470,7 @@
                                     <outlet property="labelSubregion" destination="Qt2-bY-kD3" id="Llz-ZX-qxh"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section4Cell" textLabel="vUa-xK-kNu" style="IBUITableViewCellStyleDefault" id="TXH-wa-LXI" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section4Cell" textLabel="vUa-xK-kNu" style="IBUITableViewCellStyleDefault" id="TXH-wa-LXI" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="431.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TXH-wa-LXI" id="7Qn-UG-1nb">
@@ -490,7 +490,7 @@
                                     <outlet property="labelRegionalBlocs" destination="vUa-xK-kNu" id="zj5-hz-XRl"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section5Cell" textLabel="YfQ-ij-pDK" style="IBUITableViewCellStyleDefault" id="c2a-ht-8ZN" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section5Cell" textLabel="YfQ-ij-pDK" style="IBUITableViewCellStyleDefault" id="c2a-ht-8ZN" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="475.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c2a-ht-8ZN" id="Da9-sD-bCi">
@@ -510,7 +510,7 @@
                                     <outlet property="labelCurrencies" destination="YfQ-ij-pDK" id="LQ8-cf-27g"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="section6Cell" textLabel="Dve-6X-a57" style="IBUITableViewCellStyleDefault" id="7mJ-DV-lg3" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section6Cell" textLabel="Dve-6X-a57" style="IBUITableViewCellStyleDefault" id="7mJ-DV-lg3" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="519.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7mJ-DV-lg3" id="fy7-Wb-yAQ">

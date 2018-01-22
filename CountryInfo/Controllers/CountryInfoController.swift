@@ -11,6 +11,8 @@ import Foundation
 
 class CountryInfoController {
 
+    var infomations = [Information]()
+
     // MARK: Global Constant shared CountryInfoController
     static let shared = CountryInfoController()
     
@@ -22,6 +24,7 @@ class CountryInfoController {
             if let data = data {
                 do {
                     let information = try jsonDecoder.decode([Information].self, from: data)
+                    self.infomations = information
                     completion(information)
 //                    print(information)
                 } catch {

@@ -14,8 +14,7 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: Properties
     let countryInfoController = CountryInfoController()
     var informations = [Information]()
-    var countries = [String]()
-    var filteredData = [String]()
+    var filteredData = [Information]()
     var isSearching = false
 
     // MARK: Outlets
@@ -38,12 +37,7 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
             }
         
         searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.done
-        
-//        for index in informations{
-//            countries.append(index.name!)
-//        }
-//        print(countries)
+        searchBar.returnKeyType = UIReturnKeyType.search
     }
     
     func updateUI(with info: [Information]) {
@@ -62,51 +56,49 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if isSearching {
-//            return filteredData.count
-//        }
-        
-        return informations.count
+        if isSearching {
+            return filteredData.count
+        }
+        else {
+            return informations.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesCellIdentifier", for: indexPath)
-//        if isSearching {
-//            cell.textLabel?.text = filteredData[indexPath.row]
-//        }
-//        else{
-//            configure(cell: cell, forItemAt: indexPath)
-//        }
-//        return cell
-//    }
-        configure(cell: cell, forItemAt: indexPath)
+        if isSearching {
+            cell.textLabel?.text = filteredData[indexPath.row].name!
+        }
+        else{
+            configure(cell: cell, forItemAt: indexPath)
+        }
         return cell
     }
+//        configure(cell: cell, forItemAt: indexPath)
+//        return cell
+//    }
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
         cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
     }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        prepare(for: UIStoryboardSegue, sender: Any?)
-//    }
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text == nil || searchBar.text == "" {
-//            isSearching = false
-//
-//            view.endEditing(true)
-//
-//            tableView.reloadData()
-//        } else {
-//            isSearching = true
-//
-//            filteredData = informations.filter({$0 == searchBar.text})
-//
-//            tableView.reloadData()
-//        }
-//    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+
+            view.endEditing(true)
+
+            tableView.reloadData()
+        } else {
+            isSearching = true
+
+            filteredData = informations.filter({$0.name! == searchBar.text})
+
+            tableView.reloadData()
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
