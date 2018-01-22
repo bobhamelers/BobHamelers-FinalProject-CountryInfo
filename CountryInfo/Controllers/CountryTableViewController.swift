@@ -14,6 +14,7 @@ class CountryTableViewController: UITableViewController {
     let countryInfoController = CountryInfoController()
     var informations = [Information]()
     var countryInfo = [Information]()
+    let sectionTitles = ["Name country", "Basic codes of country", "Calling Codes and Timezones", "Basic geographical information", "Regional Partnerships", "Currencies", "Languages"]
 //    let numberOfRowsAtSection: [Int] = [1, 4, 2, 6, self.countryInfo.RegionalBlocks.count self.countryInfo.Currencies.count, self.countryInfo.Languages.count]
     
     override func viewDidLoad() {
@@ -86,6 +87,13 @@ class CountryTableViewController: UITableViewController {
         default:
             return 0
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section >= 0 && section <= 6 {
+            return sectionTitles[section]
+        }
+        return nil
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
