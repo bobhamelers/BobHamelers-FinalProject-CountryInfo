@@ -110,37 +110,55 @@ class CountryTableViewController: UITableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CountryTableViewCell
-        switch (indexPath.section) {
-        case 0:
+        switch (indexPath) {
+        case [0,0]:
             cell.labelCountryName!.text = countryInfo[0].name
             return cell
-        case 1:
+        case [1,0]:
             cell.labelAlphaTwo!.text = countryInfo[0].alpha2Code
+            return cell
+        case [1,1]:
             cell.labelAlphaThree!.text = countryInfo[0].alpha3Code
+            return cell
+        case [1,2]:
             cell.labelNumericCode!.text = countryInfo[0].numericCode
+            return cell
+        case [1,3]:
             cell.labelInternetCodes!.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
             return cell
-        case 2:
+        case [2,0]:
             cell.labelCallingCodes!.text = countryInfo[0].callingCodes!.joined(separator: ", ")
+            return cell
+        case [2,1]:
             cell.labelTimezones!.text = countryInfo[0].timezones!.joined(separator: ", ")
             return cell
-        case 3:
+        case [3,0]:
             cell.labelCapital!.text = countryInfo[0].capital
+            return cell
+        case [3,1]:
             cell.labelRegion!.text = countryInfo[0].region
+            return cell
+        case [3,2]:
             cell.labelSubregion!.text = countryInfo[0].subregion
+            return cell
+        case [3,3]:
             cell.labelBorders!.text = countryInfo[0].borders!.joined(separator: ", ")
+            return cell
+        case [3,4]:
             cell.labelPopulation!.text = "\(String(describing: countryInfo[0].population!))"
+            return cell
+        case [3,5]:
             cell.labelDemonym!.text = countryInfo[0].demonym
             return cell
-        case 4:
+        case [4,0]:
             let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
             cell.labelRegionalBlocs!.text = text
             return cell
-        case 5:
+        case [5,0]:
             let text = countryInfo[0].currencies![indexPath.row].name! + ", " + countryInfo[0].currencies![indexPath.row].code! + ", " + countryInfo[0].currencies![indexPath.row].symbol!
             cell.labelCurrencies!.text = text
             return cell
-        case 6:
+        case [6,0]:
             let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
             cell.labelLanguages!.text = text
             return cell

@@ -15,19 +15,30 @@ class ListsTableViewController: UITableViewController {
     let listToUsers = "ListToUsers"
     
     // MARK: Properties
-    var lists = [List]()
-    let ref = Database.database().reference(withPath: "lists")
-    let usersRef = Database.database().reference(withPath: "online")
-    var user: User!
+    var lists: [List] = []
+    let ref = Database.database().reference(withPath: "users")
+    let userID = Auth.auth().currentUser?.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let savedLists = List.loadLists() {
-            lists = savedLists
+        let currentUser = self.ref.child(self.userID!)
+        currentUser.child("lists").observe(.value) { (snapshot) in
+            if let getData = snapshot.value as? [String:Any] {
+                var newLists : [List] = []
+                
+                for item in snapshot.children {
+                    let list = List(snapshot: item as! DataSnapshot)
+                    newLists.append(list)
+                }
+                self.lists = newLists
+                self.tableView.reloadData()
+                print(self.lists)
+            }
+            else {
+                print("not found data")
+            }
         }
-
-//        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,56 +55,34 @@ class ListsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as? ListsTableViewCell else {fatalError("Could not dequeue a cell")}
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListsTableViewCell
         
-//        cell.delegate = self
-
-        let list = lists[indexPath.row]
-        cell.titleLabel?.text = list.listName
+        cell.titleLabel?.text = lists[indexPath.row].listName
         return cell
     }
 
         override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
             return true
         }
-
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            lists.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            List.saveLists(lists)
+            let list = lists[indexPath.row]
+            list.ref?.removeValue()
         }
     }
 
     @IBAction func unwindToListFeeder(segue: UIStoryboardSegue) {
-        guard segue.identifier == "saveUnwind" else { return }
-        let sourceViewController = segue.source as!
-        ListFeederTableViewController
-
-        if let list = sourceViewController.list {
-            if let selectedIndexPath =
-                tableView.indexPathForSelectedRow {
-                lists[selectedIndexPath.row] = list
-                tableView.reloadRows(at: [selectedIndexPath],
-                                     with: .none)
-            } else {
-                let newIndexPath = IndexPath(row: lists.count, section: 0)
-                lists.append(list)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
-        }
-        List.saveLists(lists)
     }
-//    override func prepare(for segue: UIStoryboardSegue,
-//                          sender: Any?) {
-//        if segue.identifier == "showListDetails" {
-//            let todoViewController = segue.destination
-//                as! ListTableViewController
-//            let indexPath = tableView.indexPathForSelectedRow!
-//            let selectedList = lists[indexPath.row]
-//            ListChangerTableViewController.list = selectedList
-//        }
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue,
+                          sender: Any?) {
+        if segue.identifier == "showListDetails" {
+            let index = self.tableView.indexPathForSelectedRow!.row
+            let ListTableViewController = segue.destination
+                as! ListTableViewController
+            ListTableViewController.listInfo = [lists[index]]
+        }
+    }
 }
 

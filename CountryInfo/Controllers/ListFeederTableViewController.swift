@@ -6,15 +6,17 @@
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 class ListFeederTableViewController: UITableViewController {
     
     // MARK: Properties
-    let countryInfoController = CountryInfoController()
-    var informations = [Information]()
-    let countriesTableViewController = CountriesTableViewController()
-    var list: List?
+    var informations: [Information] = []
+    var lists: [List] = []
+    var countries: [String] = []
+    let ref = Database.database().reference(withPath: "users")
+    let userID = Auth.auth().currentUser?.uid
     
     // MARK: Outlets
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -24,30 +26,25 @@ class ListFeederTableViewController: UITableViewController {
     @IBAction func returnPressed(_ sender: UITextField) {
         titleTextField.resignFirstResponder()
     }
-    @IBAction func textEditingChanged(_ sender: UITextField) {
-        updateSaveButtonState()
-    }
+//    @IBAction func textEditingChanged(_ sender: UITextField) {
+//        updateSaveButtonState()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.informations = countryInfoController.infomations
-        print(informations)
-//        var info = countriesTableViewController.informations
-//        self.updateUI(with: info)
         
-        updateSaveButtonState()
+        self.informations = CountryInfoController.shared.infomations
+        print(informations)
     }
     
-//    func updateUI(with info: [Information]) {
-//        DispatchQueue.main.async {
-//            self.informations = info
-//            self.tableView.reloadData()
-//        }
-//    }
-    
     func updateSaveButtonState() {
-        let text = titleTextField.text ?? ""
-        saveButton.isEnabled = !text.isEmpty
+        let titleList = titleTextField.text!
+        if titleList == "" {
+            createAlert(title: "FAILURE", message: "You have to type a listname in the section above the countries!")
+        } else {
+            let currentUser = self.ref.child(self.userID!)
+            let listname = currentUser.child("lists").child(titleList).setValue(countries)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,9 +60,24 @@ class ListFeederTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
         configure(cell: cell, forItemAt: indexPath)
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
+        let information = informations[indexPath.row]
+        
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
+            countries = countries.filter{$0 != information.alpha2Code}
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        } else {
+            countries.append(information.alpha2Code!)
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
+        print(countries)
     }
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
@@ -73,73 +85,23 @@ class ListFeederTableViewController: UITableViewController {
         cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
     }
     
+    func createAlert (title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        // Alert function for different alerts in SignUp and Login
+    }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        guard segue.identifier == "saveUnwind" else { return }
-        
-//        let title = titleTextField.text!
-//        let isComplete = isCompleteButton.isSelected
-//        let dueDate = dueDatePickerView.date
-//        let notes = notesTextView.text
-//        todo = ToDo(title: title, isComplete: isComplete, dueDate:
-//            dueDate, notes: notes)
+        if segue.identifier == "saveUnwind" {
+            if segue.destination is ListsTableViewController {
+                updateSaveButtonState()
+            }
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

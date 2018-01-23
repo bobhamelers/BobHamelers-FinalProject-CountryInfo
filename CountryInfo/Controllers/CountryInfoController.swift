@@ -15,7 +15,7 @@ class CountryInfoController {
 
     // MARK: Global Constant shared CountryInfoController
     static let shared = CountryInfoController()
-    
+
     // MARK: Completion function to decode JSON from API with checks
     func fetchCompletion(completion: @escaping ([Information]?) -> Void) {
         let url = URL(string: "https://restcountries.eu/rest/v2/all")!

@@ -88,14 +88,11 @@
 			children = (
 				1833F8F120039B6B006EAE22 /* CountryInfoController.swift */,
 				18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */,
-				18C6800B20126A7A00E4B84B /* CountryTableViewCell.swift */,
 				18C67FFD200F771800E4B84B /* CountryTableViewController.swift */,
 				18C680132015048600E4B84B /* ListChangerTableViewController.swift */,
 				18C680112015042800E4B84B /* ListFeederTableViewController.swift */,
 				18C680012011041900E4B84B /* ListsTableViewController.swift */,
 				18C6800F2014F14600E4B84B /* ListTableViewController.swift */,
-				18C68015201608E200E4B84B /* ListTableViewCell.swift */,
-				18C6800D2014E11100E4B84B /* ListsTableViewCell.swift */,
 				180E644D20079DFB008408EF /* LoginViewController.swift */,
 				180E644F2007A537008408EF /* SignUpViewController.swift */,
 			);
@@ -152,6 +149,7 @@
 		1833F8EE20039B6B006EAE22 /* CountryInfo */ = {
 			isa = PBXGroup;
 			children = (
+				18C6801720173D8200E4B84B /* Cells */,
 				18C67FFC200CFA0200E4B84B /* CountryInfo.entitlements */,
 				180E644920079CCA008408EF /* Controllers */,
 				180E644B20079CDE008408EF /* Models */,
@@ -162,6 +160,16 @@
 				1833F901200779F1006EAE22 /* GoogleService-Info.plist */,
 			);
 			path = CountryInfo;
+			sourceTree = "<group>";
+		};
+		18C6801720173D8200E4B84B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				18C6800B20126A7A00E4B84B /* CountryTableViewCell.swift */,
+				18C68015201608E200E4B84B /* ListTableViewCell.swift */,
+				18C6800D2014E11100E4B84B /* ListsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CD2E68446B3320F700DDC522 /* Pods */ = {

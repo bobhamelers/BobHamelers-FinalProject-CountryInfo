@@ -11,14 +11,12 @@ import UIKit
 class ListChangerTableViewController: UITableViewController {
 
     // MARK: Properties
-    let countryInfoController = CountryInfoController()
     var informations = [Information]()
-    let countriesTableViewController = CountriesTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var info = countriesTableViewController.informations
-        self.updateUI(with: info)
+//        var info = countriesTableViewController.informations
+//        self.updateUI(with: info)
     }
     
     func updateUI(with info: [Information]) {

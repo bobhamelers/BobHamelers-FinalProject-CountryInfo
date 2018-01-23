@@ -9,9 +9,14 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
+    
+    // MARK: Properties
+    var informations: [Information] = []
+    var listInfo = [List]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(listInfo)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

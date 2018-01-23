@@ -30,7 +30,7 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        countryInfoController.fetchCompletion { (info) in
+        CountryInfoController.shared.fetchCompletion { (info) in
             if let info = info {
                 self.updateUI(with: info)
                 }
@@ -103,16 +103,14 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
         if segue.identifier == "CountrySegue" {
-//            if isSearching == true {
-//
-//                let currentCellLabel = (tableView.cellForRow(at: tableView.indexPathForSelectedRow!)?.textLabel?.text)
-//
-//                let index = informations.indexOf(currentCellLabel)
-//            }
             let index = self.tableView.indexPathForSelectedRow!.row
             let CountryTableViewController = segue.destination as!
             CountryTableViewController
-            CountryTableViewController.countryInfo = [informations[index]]
+            if isSearching {
+                CountryTableViewController.countryInfo = [filteredData[index]]
+            } else {
+                CountryTableViewController.countryInfo = [informations[index]]
+            }
         }
         // Prepare for CountryViewController
     }
