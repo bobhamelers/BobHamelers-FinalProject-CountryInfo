@@ -26,7 +26,10 @@ class ListFeederTableViewController: UITableViewController {
     @IBAction func returnPressed(_ sender: UITextField) {
         titleTextField.resignFirstResponder()
     }
-//    @IBAction func textEditingChanged(_ sender: UITextField) {
+//    @IBAction func saveButtonTapped(_ sender: Any) {
+//        updateSaveButtonState()
+//    }
+    //    @IBAction func textEditingChanged(_ sender: UITextField) {
 //        updateSaveButtonState()
 //    }
     
@@ -43,7 +46,11 @@ class ListFeederTableViewController: UITableViewController {
             createAlert(title: "FAILURE", message: "You have to type a listname in the section above the countries!")
         } else {
             let currentUser = self.ref.child(self.userID!)
-            let listname = currentUser.child("lists").child(titleList).setValue(countries)
+            let listname = currentUser.child("lists").child(titleList)
+            
+            for country in countries{
+                listname.child(country).child("name").setValue(country)
+            }
         }
     }
 
@@ -100,7 +107,6 @@ class ListFeederTableViewController: UITableViewController {
         Any?) {
         if segue.identifier == "saveUnwind" {
             if segue.destination is ListsTableViewController {
-                updateSaveButtonState()
             }
         }
     }

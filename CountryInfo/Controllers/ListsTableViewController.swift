@@ -15,7 +15,7 @@ class ListsTableViewController: UITableViewController {
     let listToUsers = "ListToUsers"
     
     // MARK: Properties
-    var lists: [List] = []
+    var lists = [List]()
     let ref = Database.database().reference(withPath: "users")
     let userID = Auth.auth().currentUser?.uid
     
@@ -55,7 +55,7 @@ class ListsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListsCellIdentifier", for: indexPath) as! ListsTableViewCell
         
         cell.titleLabel?.text = lists[indexPath.row].listName
         return cell
@@ -69,6 +69,8 @@ class ListsTableViewController: UITableViewController {
         if editingStyle == .delete {
             let list = lists[indexPath.row]
             list.ref?.removeValue()
+            lists.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
@@ -81,7 +83,7 @@ class ListsTableViewController: UITableViewController {
             let index = self.tableView.indexPathForSelectedRow!.row
             let ListTableViewController = segue.destination
                 as! ListTableViewController
-            ListTableViewController.listInfo = [lists[index]]
+            ListTableViewController.listInfo = [self.lists[index]]
         }
     }
 }

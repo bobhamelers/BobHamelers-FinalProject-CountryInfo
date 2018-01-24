@@ -17,17 +17,15 @@ struct List {
 
     init(snapshot: DataSnapshot) {
         listName = snapshot.key
-        let snapshotValue = snapshot.value as! NSArray
-        for snap in snapshotValue {
-            print(snap)
-            countryIsAlphaCode2.append(snap as! String)
+        for child in snapshot.children.allObjects as! [DataSnapshot] {
+            let snapshotValue = child.childSnapshot(forPath: "name")
+            countryIsAlphaCode2.append(snapshotValue.value as! String)
         }
-        
-//        let snapshotValue = snapshot.value as! [String: AnyObject]
-//        countryIsAlphaCode2 = snapshotValue["country"] as! String
+//            countryIsAlphaCode2.append(snap as! String)
+//        }
+
 //        let snapshotValue = snapshot.value as! [Int: AnyObject]
 //        countryIsAlphaCode2 = snapshotValue[0] as! String
-        
 
         ref = snapshot.ref
     }
