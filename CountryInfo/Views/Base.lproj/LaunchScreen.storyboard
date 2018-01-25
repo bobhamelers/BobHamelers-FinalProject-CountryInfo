@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBt-BR-CtB">
+                                <rect key="frame" x="16" y="168" width="343" height="331"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CBt-BR-CtB" secondAttribute="trailing" constant="16" id="7XZ-Cf-6z6"/>
+                            <constraint firstItem="CBt-BR-CtB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BzI-Ry-dbP"/>
+                            <constraint firstItem="CBt-BR-CtB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HL0-nt-RPh"/>
+                            <constraint firstItem="CBt-BR-CtB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LqH-yS-kfk"/>
+                            <constraint firstItem="CBt-BR-CtB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="QRL-iO-xQN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

@@ -23,13 +23,17 @@ class ListChangerTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.informations = CountryInfoController.shared.infomations
-        print(informations)
+//        print(informations)
+        
+        print("HELLO1")
         
         print(dataList)
+        print("HELLO2")
         print(listInfo)
         
         for countryOnly in 0..<(listInfo[0].countryIsAlphaCode2.count){
             countries.append(listInfo[0].countryIsAlphaCode2[countryOnly])
+            print("Hello3")
             print(countries)
         }
         
@@ -39,6 +43,8 @@ class ListChangerTableViewController: UITableViewController {
         
         let currentUser = self.ref.child(self.userID!)
         let listname = currentUser.child("lists").child(listInfo[0].listName)
+        
+        listname.ref.removeValue()
         
         for country in countries{
             listname.child(country).child("name").setValue(country)
@@ -61,15 +67,17 @@ class ListChangerTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListChangerCellIdentifier", for: indexPath) as! ListTableViewCell
         configure(cell: cell, forItemAt: indexPath)
         
+        for country in (0..<countries.count) {
+            if informations[indexPath.row].alpha2Code == countries[country] {
+                cell.accessoryType = .checkmark
+            }
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListChangerCellIdentifier", for: indexPath) as! ListTableViewCell
         let information = informations[indexPath.row]
-        
-//        for country in dataList.count {
-//            if information == dataLis
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
             countries = countries.filter{$0 != information.alpha2Code}
@@ -86,10 +94,12 @@ class ListChangerTableViewController: UITableViewController {
         cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender:
-//        Any?) {
-//        super.prepare(for: segue, sender: sender)
-//
-//        guard segue.identifier == "saveUnwind" else { return }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender:
+        Any?) {
+        if segue.identifier == "saveUnwind" {
+            if segue.destination is ListsTableViewController {
+                updateSaveButtonState()
+            }
+        }
+    }
 }

@@ -29,33 +29,6 @@ class CountryTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
-//    func information(with countryInfo: [Information]) {
-//        labelCountryName.text = countryInfo[0].name
-//
-//        labelAlphaTwo.text = countryInfo[0].alpha2Code
-//        labelAlphaThree.text = countryInfo[0].alpha3Code
-//        labelNumericCode.text = countryInfo[0].numericCode
-//        labelInternetCodes.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
-//
-//        labelCallingCodes.text = countryInfo[0].callingCodes!.joined(separator: ", ")
-//        labelTimezones.text = countryInfo[0].timezones!.joined(separator: ", ")
-//
-//        labelCapital.text = countryInfo[0].capital
-//        labelRegion.text = countryInfo[0].region
-//        labelSubregion.text = countryInfo[0].subregion
-//        labelBorders.text = countryInfo[0].borders!.joined(separator: ", ")
-//        labelPopulation.text = "\(String(describing: countryInfo[0].population))"
-//        labelDemonym.text = countryInfo[0].demonym
-//
-//        let countOne = countryInfo.first?.regionalBlocs!.count
-//        let countTwo = countryInfo.first?.currencies!.count
-//        let countThree = countryInfo.first?.languages!.count
-//
-//        labelRegionalBlocs.text = countryInfo[0].regionalBlocs
-//        labelCurrencies.text = countryInfo[0].currencies
-//        labelLanguages.text = countryInfo[0].languages
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -112,55 +85,61 @@ class CountryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CountryTableViewCell
         switch (indexPath) {
         case [0,0]:
-            cell.labelCountryName!.text = countryInfo[0].name
+            cell.labelCountryName!.text = ("Country Name:  ") + countryInfo[0].name!
             return cell
         case [1,0]:
-            cell.labelAlphaTwo!.text = countryInfo[0].alpha2Code
+            cell.labelAlphaTwo!.text = ("Alpha2 Code:  ") + countryInfo[0].alpha2Code!
             return cell
         case [1,1]:
-            cell.labelAlphaThree!.text = countryInfo[0].alpha3Code
+            cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
             return cell
         case [1,2]:
-            cell.labelNumericCode!.text = countryInfo[0].numericCode
+            cell.labelNumericCode!.text = ("Numeric Code:  ") + countryInfo[0].numericCode!
             return cell
         case [1,3]:
-            cell.labelInternetCodes!.text = countryInfo[0].topLevelDomain!.joined(separator: ", ")
+            cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
             return cell
         case [2,0]:
-            cell.labelCallingCodes!.text = countryInfo[0].callingCodes!.joined(separator: ", ")
+            cell.labelCallingCodes!.text = ("Calling Codes:  ") + countryInfo[0].callingCodes!.joined(separator: ", ")
             return cell
         case [2,1]:
-            cell.labelTimezones!.text = countryInfo[0].timezones!.joined(separator: ", ")
+            cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
             return cell
         case [3,0]:
-            cell.labelCapital!.text = countryInfo[0].capital
+            cell.labelCapital!.text = ("Capital:  ") + countryInfo[0].capital!
             return cell
         case [3,1]:
-            cell.labelRegion!.text = countryInfo[0].region
+            cell.labelRegion!.text = ("Region:  ") + countryInfo[0].region!
             return cell
         case [3,2]:
-            cell.labelSubregion!.text = countryInfo[0].subregion
+            cell.labelSubregion!.text = ("Subregion:  ") + countryInfo[0].subregion!
             return cell
         case [3,3]:
-            cell.labelBorders!.text = countryInfo[0].borders!.joined(separator: ", ")
+            cell.labelBorders!.text = ("Borders (Alpha3Code):  ") + countryInfo[0].borders!.joined(separator: ", ")
             return cell
         case [3,4]:
-            cell.labelPopulation!.text = "\(String(describing: countryInfo[0].population!))"
+            cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
             return cell
         case [3,5]:
-            cell.labelDemonym!.text = countryInfo[0].demonym
+            cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym! + (" people")
             return cell
-        case [4,0]:
+        case [4]:
+//            for cellOnly in 0..<(countryInfo[0].regionalBlocs!.count) {
+//                let text = countryInfo[0].regionalBlocs![cellOnly].acronym! + ", " + countryInfo[0].regionalBlocs![cellOnly].name!
+//                cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
+//                return cell
+//            }
+            
             let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
-            cell.labelRegionalBlocs!.text = text
+            cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
             return cell
-        case [5,0]:
+        case [5]:
             let text = countryInfo[0].currencies![indexPath.row].name! + ", " + countryInfo[0].currencies![indexPath.row].code! + ", " + countryInfo[0].currencies![indexPath.row].symbol!
-            cell.labelCurrencies!.text = text
+            cell.labelCurrencies!.text = ("Currency:  ") + text
             return cell
-        case [6,0]:
+        case [6]:
             let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
-            cell.labelLanguages!.text = text
+            cell.labelLanguages!.text = ("Language:  ") + text
             return cell
         
         default: break

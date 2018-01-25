@@ -107,6 +107,7 @@ class ListFeederTableViewController: UITableViewController {
         Any?) {
         if segue.identifier == "saveUnwind" {
             if segue.destination is ListsTableViewController {
+                updateSaveButtonState()
             }
         }
     }

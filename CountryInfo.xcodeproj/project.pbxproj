@@ -29,6 +29,7 @@
 		18C680122015042800E4B84B /* ListFeederTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C680112015042800E4B84B /* ListFeederTableViewController.swift */; };
 		18C680142015048600E4B84B /* ListChangerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C680132015048600E4B84B /* ListChangerTableViewController.swift */; };
 		18C68016201608E300E4B84B /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C68015201608E200E4B84B /* ListTableViewCell.swift */; };
+		18C6801B201959F100E4B84B /* worldNight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C6801A201959EF00E4B84B /* worldNight.jpg */; };
 		469DA47F4B8190C64D87CDF0 /* Pods_CountryInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		18C680112015042800E4B84B /* ListFeederTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFeederTableViewController.swift; path = CountryInfo/Controllers/ListFeederTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		18C680132015048600E4B84B /* ListChangerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListChangerTableViewController.swift; path = CountryInfo/Controllers/ListChangerTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		18C68015201608E200E4B84B /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		18C6801A201959EF00E4B84B /* worldNight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = worldNight.jpg; sourceTree = "<group>"; };
 		6B16FBD3FAEB639EDFD614AD /* Pods-CountryInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryInfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo.release.xcconfig"; sourceTree = "<group>"; };
 		F927C9A2226E02FACD1C16EB /* Pods_CountryInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 			children = (
 				1833F8EF20039B6B006EAE22 /* AppDelegate.swift */,
 				18C67FEE200922D000E4B84B /* world.gif */,
+				18C6801A201959EF00E4B84B /* worldNight.jpg */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				18C67FEF200922D000E4B84B /* world.gif in Resources */,
 				1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */,
 				1833F902200779F1006EAE22 /* GoogleService-Info.plist in Resources */,
+				18C6801B201959F100E4B84B /* worldNight.jpg in Resources */,
 				1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */,
 				1833F8F520039B6C006EAE22 /* Main.storyboard in Resources */,
 			);

@@ -91,7 +91,6 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChangeSegue" {
-            let index = self.tableView.indexPathForSelectedRow!.row
             let ListChangerTableViewController = segue.destination as!
             ListChangerTableViewController
             ListChangerTableViewController.dataList = data
