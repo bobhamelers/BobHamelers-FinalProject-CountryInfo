@@ -126,7 +126,7 @@ class CountryTableViewController: UITableViewController {
             cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
             return cell
         case [2,0]:
-            cell.labelCallingCodes!.text = ("Calling Codes:  ") + countryInfo[0].callingCodes!.joined(separator: ", ")
+            cell.labelCallingCodes!.text = ("Calling Codes:  +") + countryInfo[0].callingCodes!.joined(separator: ", ")
             return cell
         case [2,1]:
             cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
