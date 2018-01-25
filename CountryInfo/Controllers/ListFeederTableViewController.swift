@@ -19,7 +19,7 @@ class ListFeederTableViewController: UITableViewController {
     let userID = Auth.auth().currentUser?.uid
     
     // MARK: Outlets
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+//    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var titleTextField: UITextField!
     
     // MARK: Actions
@@ -28,10 +28,11 @@ class ListFeederTableViewController: UITableViewController {
     }
 //    @IBAction func saveButtonTapped(_ sender: Any) {
 //        updateSaveButtonState()
+//        self.navigationController?.popViewController(animated: <#T##Bool#>)
 //    }
-    //    @IBAction func textEditingChanged(_ sender: UITextField) {
-//        updateSaveButtonState()
-//    }
+        @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class ListFeederTableViewController: UITableViewController {
         if titleList == "" {
             createAlert(title: "FAILURE", message: "You have to type a listname in the section above the countries!")
         } else {
+            
             let currentUser = self.ref.child(self.userID!)
             let listname = currentUser.child("lists").child(titleList)
             
@@ -74,7 +76,7 @@ class ListFeederTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
+        tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
         let information = informations[indexPath.row]
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {

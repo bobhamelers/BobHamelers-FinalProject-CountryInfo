@@ -557,7 +557,6 @@
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="returnPressed:" destination="qbP-uc-RLc" eventType="editingDidEnd" id="TaQ-Rx-e5Q"/>
-                                <action selector="textEditingChanged:" destination="qbP-uc-RLc" eventType="editingDidEnd" id="Vxn-9a-fBM"/>
                             </connections>
                         </textField>
                         <prototypes>
@@ -587,13 +586,11 @@
                     <navigationItem key="navigationItem" title="Title" id="7m6-RN-QIJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Y1z-RG-x92">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="qbP-uc-RLc" id="o2G-Mq-fOs"/>
-                                <segue destination="Rk0-i9-1nU" kind="unwind" identifier="saveUnwind" unwindAction="unwindToListFeederWithSegue:" id="vtP-Ld-Jgy"/>
+                                <segue destination="Rk0-i9-1nU" kind="unwind" identifier="saveUnwind" unwindAction="unwindToListFeederWithSegue:" id="JJK-Su-ecW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="saveButton" destination="Y1z-RG-x92" id="1V8-zX-leJ"/>
                         <outlet property="titleTextField" destination="OYP-if-mHZ" id="f8N-0e-YSp"/>
                     </connections>
                 </tableViewController>
@@ -632,6 +629,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cX3-Ea-Std" kind="show" identifier="CountrySegue" id="k7I-tl-nFI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -762,5 +762,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J6L-ty-FFz"/>
+        <segue reference="k7I-tl-nFI"/>
     </inferredMetricsTieBreakers>
 </document>

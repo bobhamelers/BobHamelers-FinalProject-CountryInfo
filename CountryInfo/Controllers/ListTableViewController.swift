@@ -96,5 +96,16 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
             ListChangerTableViewController.dataList = data
             ListChangerTableViewController.listInfo = listInfo
         }
+        if segue.identifier == "CountrySegue" {
+            let index = self.tableView.indexPathForSelectedRow!.row
+            let CountryTableViewController = segue.destination as!
+            CountryTableViewController
+            if isSearching {
+                CountryTableViewController.countryInfo = [filteredData[index]]
+            } else {
+                CountryTableViewController.countryInfo = [data[index]]
+            }
+        }
+        // Prepare for CountryViewController
     }
 }

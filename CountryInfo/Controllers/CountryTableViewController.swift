@@ -121,10 +121,22 @@ class CountryTableViewController: UITableViewController {
             cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
             return cell
         case [3,5]:
-            cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym! + (" people")
+            cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
             return cell
+//        default: break
+//        }
+//        switch(indexPath.row){
         case [4]:
 //            for cellOnly in 0..<(countryInfo[0].regionalBlocs!.count) {
+//                switch (indexPath.row) {
+//                case cellOnly:
+//                    let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
+//                    cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
+//                    return cell
+//                default: break
+//                }
+//            }
+            
 //                let text = countryInfo[0].regionalBlocs![cellOnly].acronym! + ", " + countryInfo[0].regionalBlocs![cellOnly].name!
 //                cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
 //                return cell
