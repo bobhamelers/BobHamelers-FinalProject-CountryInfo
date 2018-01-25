@@ -36,7 +36,7 @@ struct Information : Codable {
     let currencies : [Currencies]?
     let languages : [Languages]?
     let translations : Translations?
-//    let flag : String?
+    let flag : String?
     let regionalBlocs : [RegionalBlocs]?
 //    let cioc : String?
 }

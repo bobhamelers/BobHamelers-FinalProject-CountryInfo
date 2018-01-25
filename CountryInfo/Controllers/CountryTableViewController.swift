@@ -17,10 +17,32 @@ class CountryTableViewController: UITableViewController {
     let sectionTitles = ["Name country", "Basic codes of country", "Calling Codes and Timezones", "Basic geographical information", "Regional Partnerships", "Currencies", "Languages"]
 //    let numberOfRowsAtSection: [Int] = [1, 4, 2, 6, self.countryInfo.RegionalBlocks.count self.countryInfo.Currencies.count, self.countryInfo.Languages.count]
     
+    // MARK: Outlets
+    @IBOutlet weak var countryImageView: UIImageView!
+    
+    // MARK: Actions
+    
+    @IBAction func didTapOpenInMaps(_ sender: Any) {
+        
+        
+        let alink = countryInfo[0].name!.replacingOccurrences(of: "[áäâàæãåāÁÄÂÀÆÃÅĀ]", with: "a",options: .regularExpression)
+        let clink = alink.replacingOccurrences(of: "[çÇ]", with: "c",options: .regularExpression)
+        let elink = clink.replacingOccurrences(of: "[éëêèęėēÉËÊÈĘĖĒ]", with: "e",options: .regularExpression)
+        let ilink = elink.replacingOccurrences(of: "[íïìîįīÍÏÌÎĮĪ]", with: "i",options: .regularExpression)
+        let olink = ilink.replacingOccurrences(of: "[óöôòõœøōÓÖÔÒÕŒØŌ]", with: "o",options: .regularExpression)
+        let ulink = olink.replacingOccurrences(of: "[úüûùūÚÜÛÙŪ]", with: "u",options: .regularExpression)
+        
+        let link = ulink.replacingOccurrences(of: " ", with: "%20")
+        print(link)
+        UIApplication.shared.open(NSURL(string: "https://maps.apple.com/?address=\(link)")! as URL, options: [:])
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(countryInfo)
         self.updateUI(with: countryInfo)
+        self.countryImageView(with: countryInfo)
     }
 
     func updateUI(with countryInfo: [Information]) {
@@ -28,6 +50,10 @@ class CountryTableViewController: UITableViewController {
 //            self.information(with: countryInfo)
             self.tableView.reloadData()
         }
+    }
+    
+    func countryImageView(with countryInfo: [Information]) {
+        countryImageView.downloadedFrom(link: "\(countryInfo[0].flag!)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -158,5 +184,27 @@ class CountryTableViewController: UITableViewController {
             
         }
         return UITableViewCell()
+    }
+}
+
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+            }.resume()
+    }
+    
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
     }
 }

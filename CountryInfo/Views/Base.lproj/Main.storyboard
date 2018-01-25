@@ -304,7 +304,7 @@
             </objects>
             <point key="canvasLocation" x="2959" y="-196"/>
         </scene>
-        <!--Country Table View Controller-->
+        <!--Title-->
         <scene sceneID="n0o-Le-JQ2">
             <objects>
                 <tableViewController id="cX3-Ea-Std" customClass="CountryTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,6 +536,16 @@
                             <outlet property="delegate" destination="cX3-Ea-Std" id="4fH-iQ-HkB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="m9b-bt-wSC">
+                        <barButtonItem key="rightBarButtonItem" title="Open in Maps" id="SsF-BD-1zL">
+                            <connections>
+                                <action selector="didTapOpenInMaps:" destination="cX3-Ea-Std" id="lgS-KD-era"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="countryImageView" destination="jhK-6m-Nmu" id="WjA-te-eyM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVt-uS-te0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
