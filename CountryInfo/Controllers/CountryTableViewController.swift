@@ -20,6 +20,8 @@ class CountryTableViewController: UITableViewController {
     // MARK: Outlets
     @IBOutlet weak var countryImageView: UIImageView!
     
+    @IBOutlet weak var webView: UIWebView!
+    
     // MARK: Actions
     
     @IBAction func didTapOpenInMaps(_ sender: Any) {
@@ -53,7 +55,10 @@ class CountryTableViewController: UITableViewController {
     }
     
     func countryImageView(with countryInfo: [Information]) {
-        countryImageView.downloadedFrom(link: "\(countryInfo[0].flag!)")
+//        var url: NSURL = countryInfo[0].flag!
+//        let request: NSURLRequest = NSURLRequest(URL: url)
+//        webView.loaddRequest(request)
+//        countryImageView.downloadedFrom(link: "\(countryInfo[0].flag!)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -149,33 +154,15 @@ class CountryTableViewController: UITableViewController {
         case [3,5]:
             cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
             return cell
-//        default: break
-//        }
-//        switch(indexPath.row){
-        case [4]:
-//            for cellOnly in 0..<(countryInfo[0].regionalBlocs!.count) {
-//                switch (indexPath.row) {
-//                case cellOnly:
-//                    let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
-//                    cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
-//                    return cell
-//                default: break
-//                }
-//            }
-            
-//                let text = countryInfo[0].regionalBlocs![cellOnly].acronym! + ", " + countryInfo[0].regionalBlocs![cellOnly].name!
-//                cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
-//                return cell
-//            }
-            
+        case [4,indexPath.row]:
             let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
             cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
             return cell
-        case [5]:
+        case [5,indexPath.row]:
             let text = countryInfo[0].currencies![indexPath.row].name! + ", " + countryInfo[0].currencies![indexPath.row].code! + ", " + countryInfo[0].currencies![indexPath.row].symbol!
             cell.labelCurrencies!.text = ("Currency:  ") + text
             return cell
-        case [6]:
+        case [6,indexPath.row]:
             let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
             cell.labelLanguages!.text = ("Language:  ") + text
             return cell

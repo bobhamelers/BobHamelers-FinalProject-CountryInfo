@@ -45,6 +45,8 @@ class ListFeederTableViewController: UITableViewController {
         let titleList = titleTextField.text!
         if titleList == "" {
             createAlert(title: "FAILURE", message: "You have to type a listname in the section above the countries!")
+        } else if countries.count == 0{
+            createAlert(title: "FAILURE", message: "You have not selected any country!")
         } else {
             
             let currentUser = self.ref.child(self.userID!)

@@ -27,22 +27,33 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpAndLogin(_ sender: AnyObject) {
         
         if textFieldSignUpEmail.text!.contains("@") == false {
-            self.createAlert(title: "FAILURE", message: "You insert an invalid e-mail.")}
+            self.createAlert(title: "FAILURE", message: "You insert an invalid e-mail.")
+            return
+        }
 //        if textFieldSignUpUsername.text!.contains() ==
 //
 //        textFieldSignUpUsername.text!.cointains(charactersIn: ACCEPTABLE_CHARACTERS)
         
         if textFieldSignUpPassword.text! != textFieldRepeatPassword.text! {
-            self.createAlert(title: "FAILURE", message: "Your password and repeat password are not the same.")}
+            self.createAlert(title: "FAILURE", message: "Your password and repeat password are not the same.")
+            return
+        }
         
         if textFieldSignUpPassword.text!.count < 6 {
-            self.createAlert(title: "FAILURE", message: "Your password has to be 6 characters or longer.")}
+            self.createAlert(title: "FAILURE", message: "Your password has to be 6 characters or longer.")
+            return
+        }
+        
         // SignUp Authentication
         Auth.auth().createUser(withEmail: textFieldSignUpEmail.text!,
                                password: textFieldSignUpPassword.text!) { user, error in
                                 if error == nil {
                                     Auth.auth().signIn(withEmail: self.textFieldSignUpEmail.text!,
                                                        password: self.textFieldSignUpPassword.text!)
+                                }
+                                else {
+                                    self.createAlert(title: "FAILURE", message: "This e-mail is already used by a user")
+                                    return
                                 }
         }
 //        // SignUp Database
@@ -52,7 +63,7 @@ class SignUpViewController: UIViewController {
 //            let userEmail: String = self.textFieldSignUpEmail.text!
 //            let userPassword: String = self.textFieldSignUpPassword.text!
 //            //        let userUsername: String = self.textFieldSignUpUsername.text!
-//            
+//
 //            self.ref.child("Users").child(userID).setValue(["Email": userEmail, "Password": userPassword])
 //        }
     }
