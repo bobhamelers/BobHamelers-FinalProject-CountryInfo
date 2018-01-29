@@ -2,11 +2,11 @@
 //  ListFeederTableViewController.swift
 //  CountryInfo
 //
-//  This Controller gives the possibility for a user to add a list for their own.
-//  A user can (de)select new countries.
-//  If a user don't has any countries selected, the list will not be added.
+//  This Controller gives the possibility for an user to add a list for their own.
+//  An user can (de)select new countries.
+//  If an user don't has any countries selected, the list will not be added.
 //  Next to that, a list needs a listname and will not be added otherwise.
-//  The list with countries is stored in FireBase by the personal authentication of a user.
+//  The list with countries is stored in FireBase by the personal authentication of an user.
 //
 //  Created by Bob Hamelers on 21/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
@@ -123,11 +123,11 @@ class ListFeederTableViewController: UITableViewController {
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
-        // Alert function with title (Okay) and message for different alerts.
+        // MARK: Alert function with title (Okay) and message for different alerts.
     }
     
     
-    /// MARK: Function that prepares unwind segue for ListsTableViewController when a user clicks on save button and call of function updateSaveButtonState.
+    /// MARK: Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "saveUnwind" {

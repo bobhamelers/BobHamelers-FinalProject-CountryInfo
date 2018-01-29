@@ -4,7 +4,7 @@
 //
 //  This Controller displays every list from a current user's FireBase.
 //  An user can add a list if he/she clicks on the plus button.
-//  If a user clicks on a list he/she will see the details of that specific list.
+//  If an user clicks on a list he/she will see the details of that specific list.
 //
 //  Created by Bob Hamelers on 18/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
@@ -88,7 +88,7 @@ class ListsTableViewController: UITableViewController {
         }
     }
     
-    /// MARK: Function that prepares segue for ListTableViewController when a user clicks on a list and send information of that specific list.
+    /// MARK: Function that prepares segue for ListTableViewController when an user clicks on a list and send information of that specific list.
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
         if segue.identifier == "showListDetails" {

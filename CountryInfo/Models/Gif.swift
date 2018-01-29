@@ -3,6 +3,8 @@
 //  CountryInfo
 //
 //  Downloaded by Bob Hamelers from https://github.com/bahlo/SwiftGif/blob/master/SwiftGifCommon/UIImage%2BGif.swift
+//  Bob Hamelers didn't add any comments.
+//
 //  Created by Arne Bahlo on 07.06.14.
 //  Copyright (c) 2014 Arne Bahlo. All rights reserved.
 //

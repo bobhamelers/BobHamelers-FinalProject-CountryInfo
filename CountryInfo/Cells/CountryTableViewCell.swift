@@ -2,6 +2,8 @@
 //  CountryTableViewCell.swift
 //  CountryInfo
 //
+//  Cell outlets definitions, used in CountryTableViewController.
+//
 //  Created by Bob Hamelers on 19/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
 //
@@ -10,7 +12,7 @@ import UIKit
 
 class CountryTableViewCell: UITableViewCell {
 
-    //MARK: Outlets
+    //MARK: Outlets.
     @IBOutlet weak var labelCountryName: UILabel?
     
     @IBOutlet weak var labelAlphaTwo: UILabel?
@@ -33,16 +35,15 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCurrencies: UILabel?
     @IBOutlet weak var labelLanguages: UILabel?
     
-    
+    /// MARK: AwakeFromNib.
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    /// MARK: Set Selected.
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
 }

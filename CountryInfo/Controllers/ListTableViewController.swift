@@ -3,9 +3,9 @@
 //  CountryInfo
 //
 //  This Controller displays specific information of a list.
-//  On top, a user can search countries.
+//  An user can search a country on (English) name, on alphacode2 and on alphacode3.
 //  Below that it displays countries that are clickable.
-//  In the right upper front, a user can click on edit to change the countries in the list.
+//  In the right upper front, an user can click on edit to change the countries in the list.
 //
 //  Created by Bob Hamelers on 21/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
@@ -102,11 +102,11 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
             filteredData = data.filter({$0.name!.contains(searchBar.text as! String) || $0.alpha2Code!.lowercased() == searchBar.text?.lowercased() as! String || $0.alpha3Code!.lowercased() == searchBar.text?.lowercased() as! String})
             
             tableView.reloadData()
-            // MARK: Reload TableView when user is searching with the filtered data. A user can search through data with the (English) name of a country and it's alphacodes.
+            // MARK: Reload TableView when user is searching with the filtered data. An user can search through data with the (English) name of a country and it's alphacodes.
         }
     }
     
-    /// MARK: Function that prepares segue for ListChangerTableViewController or CountryTableViewController when a user clicks on edit or on a country and send information of that specific list or country.
+    /// MARK: Function that prepares segue for ListChangerTableViewController or CountryTableViewController when an user clicks on edit or on a country and send information of that specific list or country.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChangeSegue" {
             let ListChangerTableViewController = segue.destination as!

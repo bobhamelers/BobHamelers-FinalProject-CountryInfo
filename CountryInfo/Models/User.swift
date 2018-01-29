@@ -2,6 +2,9 @@
 //  User.swift
 //  CountryInfo
 //
+//  User struct definition, used in LoginViewController and SignUpViewController.
+//  Is used to get authentication for FireBase.
+//
 //  Created by Bob Hamelers on 11/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
 //
@@ -9,7 +12,7 @@
 import Foundation
 import FirebaseAuth
 
-// MARK: User struct for FireBase
+// MARK: User struct.
 struct User {
     
     let uid: String

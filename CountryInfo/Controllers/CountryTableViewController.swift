@@ -5,7 +5,7 @@
 //  This Controller displays specific information of a country.
 //  On top, it displays the country flag.
 //  Below that it displays standard information, divided in sections, rows and cells.
-//  In the right upper front, a user can click to open a map of a country in maps.
+//  In the right upper front, an user can click to open a map of a country in maps.
 //
 //  Created by Bob Hamelers on 17/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.

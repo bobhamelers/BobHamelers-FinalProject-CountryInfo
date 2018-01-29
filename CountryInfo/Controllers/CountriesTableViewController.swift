@@ -4,7 +4,7 @@
 //
 //  This Controller displays every country from a JSON API from CountryInfoController.
 //  An user can search a country on (English) name, on alphacode2 and on alphacode3.
-//  If a user clicks on a country he/she will see the details of that specific country.
+//  If an user clicks on a country he/she will see the details of that specific country.
 //
 //  Created by Bob Hamelers on 15/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
@@ -113,11 +113,11 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
             filteredData = informations.filter({$0.name!.contains(searchBar.text as! String) || $0.alpha2Code!.lowercased() == searchBar.text?.lowercased() as! String || $0.alpha3Code!.lowercased() == searchBar.text?.lowercased() as! String})
 
             tableView.reloadData()
-            // MARK: Reload TableView when user is searching with the filtered data. A user can search through data with the (English) name of a country and it's alphacodes.
+            // MARK: Reload TableView when user is searching with the filtered data. An user can search through data with the (English) name of a country and it's alphacodes.
         }
     }
     
-    /// MARK: Function that prepares segue for CountryTableViewController when a user clicks on a country and send information of that specific country.
+    /// MARK: Function that prepares segue for CountryTableViewController when an user clicks on a country and send information of that specific country.
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
         if segue.identifier == "CountrySegue" {

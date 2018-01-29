@@ -2,10 +2,10 @@
 //  ListChangerTableViewController.swift
 //  CountryInfo
 //
-//  This Controller gives the possibility for a user to change a list of their own.
-//  A user can deselect selected countries and can select new countries.
-//  If a user don't has any countries selected, the list will be deleted.
-//  The list with countries is stored in FireBase by the personal authentication of a user.
+//  This Controller gives the possibility for an user to change a list of their own.
+//  An user can deselect selected countries and can select new countries.
+//  If an user don't has any countries selected, the list will be deleted.
+//  The list with countries is stored in FireBase by the personal authentication of an user.
 //
 //  Created by Bob Hamelers on 21/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
@@ -107,7 +107,7 @@ class ListChangerTableViewController: UITableViewController {
         // MARK: Cell content.
     }
     
-    /// MARK: Function that prepares unwind segue for ListsTableViewController when a user clicks on save button and call of function updateSaveButtonState.
+    /// MARK: Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "saveUnwind" {
