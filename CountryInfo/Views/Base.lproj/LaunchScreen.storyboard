@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Baskerville.ttc">
+            <string>Baskerville</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,17 +23,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="worldNight.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="CBt-BR-CtB">
-                                <rect key="frame" x="16" y="168" width="343" height="331"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="worldNight.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="V2m-YQ-bbV">
+                                <rect key="frame" x="75" y="320" width="225" height="190"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Informer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g73-w3-V8e">
+                                <rect key="frame" x="50" y="95" width="275" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CBt-BR-CtB" secondAttribute="trailing" constant="16" id="7XZ-Cf-6z6"/>
-                            <constraint firstItem="CBt-BR-CtB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BzI-Ry-dbP"/>
-                            <constraint firstItem="CBt-BR-CtB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HL0-nt-RPh"/>
-                            <constraint firstItem="CBt-BR-CtB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LqH-yS-kfk"/>
-                            <constraint firstItem="CBt-BR-CtB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="QRL-iO-xQN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V2m-YQ-bbV" secondAttribute="trailing" constant="75" id="4SZ-RR-y0R"/>
+                            <constraint firstItem="V2m-YQ-bbV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="Q1B-0M-v6n"/>
+                            <constraint firstItem="V2m-YQ-bbV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="Rf2-Eo-FRV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g73-w3-V8e" secondAttribute="trailing" constant="50" id="kLv-WT-qMP"/>
+                            <constraint firstItem="g73-w3-V8e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="m2t-SA-Hth"/>
+                            <constraint firstItem="g73-w3-V8e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="tQt-H1-N48"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V2m-YQ-bbV" secondAttribute="bottom" constant="157" id="wdU-Zl-U2q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

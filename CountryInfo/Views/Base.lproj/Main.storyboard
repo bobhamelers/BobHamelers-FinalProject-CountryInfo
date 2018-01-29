@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1S-FW-gbU">
-                                <rect key="frame" x="75" y="276.5" width="225" height="30"/>
+                                <rect key="frame" x="75" y="236.5" width="225" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -148,18 +148,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-jx-svq">
-                                <rect key="frame" x="75" y="226.5" width="225" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6D-Lj-oTY">
-                                <rect key="frame" x="75" y="326.5" width="225" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6L-nF-c5U">
                                 <rect key="frame" x="75" y="446.5" width="225" height="30"/>
                                 <color key="backgroundColor" red="0.085386164489999999" green="0.48004096750000003" blue="0.9989228845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -170,6 +158,12 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="CancelSegue" id="7ij-Zq-mVy"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6D-Lj-oTY">
+                                <rect key="frame" x="75" y="296.5" width="225" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -180,20 +174,17 @@
                             <constraint firstItem="L6L-nF-c5U" firstAttribute="top" secondItem="rqn-9U-4dE" secondAttribute="bottom" constant="30" id="9QC-qK-dJC"/>
                             <constraint firstItem="rqn-9U-4dE" firstAttribute="leading" secondItem="hoR-r4-V7p" secondAttribute="leading" constant="75" id="BAH-5P-uHR"/>
                             <constraint firstItem="IUF-YI-QNa" firstAttribute="top" secondItem="hoR-r4-V7p" secondAttribute="top" constant="75" id="IPV-7g-oAX"/>
-                            <constraint firstItem="Y6D-Lj-oTY" firstAttribute="top" secondItem="u1S-FW-gbU" secondAttribute="bottom" constant="20" id="Na4-4L-cre"/>
                             <constraint firstItem="IUF-YI-QNa" firstAttribute="leading" secondItem="hoR-r4-V7p" secondAttribute="leading" constant="50" id="Pt2-M9-bl7"/>
                             <constraint firstItem="hoR-r4-V7p" firstAttribute="trailing" secondItem="L6L-nF-c5U" secondAttribute="trailing" constant="75" id="TF0-8b-fvR"/>
-                            <constraint firstItem="yfU-jx-svq" firstAttribute="leading" secondItem="hoR-r4-V7p" secondAttribute="leading" constant="75" id="b1Z-g6-6NA"/>
-                            <constraint firstItem="rqn-9U-4dE" firstAttribute="top" secondItem="Y6D-Lj-oTY" secondAttribute="bottom" constant="30" id="ihV-Vd-FB6"/>
+                            <constraint firstItem="u1S-FW-gbU" firstAttribute="top" secondItem="nAZ-3k-te6" secondAttribute="bottom" constant="30" id="Vcn-FO-jWt"/>
+                            <constraint firstItem="Y6D-Lj-oTY" firstAttribute="top" secondItem="u1S-FW-gbU" secondAttribute="bottom" constant="30" id="Zfe-7N-KUZ"/>
+                            <constraint firstItem="rqn-9U-4dE" firstAttribute="top" secondItem="Y6D-Lj-oTY" secondAttribute="bottom" constant="60" id="bqJ-GA-lD2"/>
                             <constraint firstItem="u1S-FW-gbU" firstAttribute="leading" secondItem="hoR-r4-V7p" secondAttribute="leading" constant="75" id="kIo-PQ-HKY"/>
                             <constraint firstItem="nAZ-3k-te6" firstAttribute="top" secondItem="IUF-YI-QNa" secondAttribute="bottom" constant="40" id="rnJ-NM-agm"/>
                             <constraint firstItem="hoR-r4-V7p" firstAttribute="trailing" secondItem="nAZ-3k-te6" secondAttribute="trailing" constant="75" id="sHh-bl-cDd"/>
-                            <constraint firstItem="u1S-FW-gbU" firstAttribute="top" secondItem="yfU-jx-svq" secondAttribute="bottom" constant="20" id="soc-r9-qqQ"/>
                             <constraint firstItem="hoR-r4-V7p" firstAttribute="trailing" secondItem="Y6D-Lj-oTY" secondAttribute="trailing" constant="75" id="tey-GP-7P9"/>
                             <constraint firstItem="hoR-r4-V7p" firstAttribute="trailing" secondItem="u1S-FW-gbU" secondAttribute="trailing" constant="75" id="uZa-Xz-IB6"/>
                             <constraint firstItem="L6L-nF-c5U" firstAttribute="leading" secondItem="hoR-r4-V7p" secondAttribute="leading" constant="75" id="urD-gk-ZHD"/>
-                            <constraint firstItem="hoR-r4-V7p" firstAttribute="trailing" secondItem="yfU-jx-svq" secondAttribute="trailing" constant="75" id="z5R-rg-KPs"/>
-                            <constraint firstItem="yfU-jx-svq" firstAttribute="top" secondItem="nAZ-3k-te6" secondAttribute="bottom" constant="20" id="zY7-K7-1eZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hoR-r4-V7p"/>
                     </view>
@@ -201,7 +192,6 @@
                         <outlet property="textFieldRepeatPassword" destination="Y6D-Lj-oTY" id="lfz-g1-gKV"/>
                         <outlet property="textFieldSignUpEmail" destination="nAZ-3k-te6" id="jMs-mW-Pei"/>
                         <outlet property="textFieldSignUpPassword" destination="u1S-FW-gbU" id="fwY-vy-KtD"/>
-                        <outlet property="textFieldSignUpUsername" destination="yfU-jx-svq" id="AUr-ek-Cbe"/>
                         <segue destination="iF5-pN-beg" kind="presentation" identifier="SignUpSeague" id="5Ce-o5-Qrl"/>
                     </connections>
                 </viewController>
@@ -209,7 +199,7 @@
             </objects>
             <point key="canvasLocation" x="340" y="873.91304347826099"/>
         </scene>
-        <!--Lists Table View Controller-->
+        <!--Lists-->
         <scene sceneID="8Lr-NA-bOY">
             <objects>
                 <viewController id="eLE-UV-RWs" customClass="ListsTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,7 +231,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SmY-Bu-X15">
+                    <navigationItem key="navigationItem" title="Lists" id="SmY-Bu-X15">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6im-gc-bgp">
                             <connections>
                                 <segue destination="qbP-uc-RLc" kind="show" id="OJl-9e-TZn"/>
@@ -253,11 +243,11 @@
             </objects>
             <point key="canvasLocation" x="2959" y="467"/>
         </scene>
-        <!--Countries Table View Controller-->
+        <!--Countries-->
         <scene sceneID="TmA-q7-ZYt">
             <objects>
                 <viewController id="BY5-sg-A37" customClass="CountriesTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bwh-Xi-YR8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bwh-Xi-YR8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -289,7 +279,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fJj-aJ-QN0">
+                    <navigationItem key="navigationItem" title="Countries" id="fJj-aJ-QN0">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Lbx-j3-0sa">
                             <connections>
                                 <action selector="logoutDidTouch:" destination="BY5-sg-A37" id="FoK-8e-NAW"/>
@@ -304,7 +294,7 @@
             </objects>
             <point key="canvasLocation" x="2959" y="-196"/>
         </scene>
-        <!--Title-->
+        <!--Country-->
         <scene sceneID="n0o-Le-JQ2">
             <objects>
                 <tableViewController id="cX3-Ea-Std" customClass="CountryTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
@@ -312,13 +302,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jhK-6m-Nmu">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="z6T-p0-wYl">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section0Cell" textLabel="Vtp-sa-5PX" style="IBUITableViewCellStyleDefault" id="bMh-dl-3l2" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="305.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMh-dl-3l2" id="sCB-23-CwM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -338,7 +329,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section1Cell" textLabel="Tg4-ku-NVR" style="IBUITableViewCellStyleDefault" id="hF3-1C-Fe0" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="349.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hF3-1C-Fe0" id="bSD-HK-w9o">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -382,7 +373,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section2Cell" textLabel="cyV-ZW-T6a" style="IBUITableViewCellStyleDefault" id="U6u-n7-SOG" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="393.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U6u-n7-SOG" id="bv7-pG-vUA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -410,7 +401,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section3Cell" textLabel="Fi2-8n-re2" style="IBUITableViewCellStyleDefault" id="xk7-kY-7tT" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="437.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xk7-kY-7tT" id="EKk-dQ-yJm">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -470,7 +461,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section4Cell" textLabel="vUa-xK-kNu" style="IBUITableViewCellStyleDefault" id="TXH-wa-LXI" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="431.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="481.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TXH-wa-LXI" id="7Qn-UG-1nb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -490,7 +481,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section5Cell" textLabel="YfQ-ij-pDK" style="IBUITableViewCellStyleDefault" id="c2a-ht-8ZN" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="475.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="525.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c2a-ht-8ZN" id="Da9-sD-bCi">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -510,7 +501,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="section6Cell" textLabel="Dve-6X-a57" style="IBUITableViewCellStyleDefault" id="7mJ-DV-lg3" customClass="CountryTableViewCell" customModule="CountryInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="519.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="569.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7mJ-DV-lg3" id="fy7-Wb-yAQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -536,7 +527,7 @@
                             <outlet property="delegate" destination="cX3-Ea-Std" id="4fH-iQ-HkB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="m9b-bt-wSC">
+                    <navigationItem key="navigationItem" title="Country" id="m9b-bt-wSC">
                         <barButtonItem key="rightBarButtonItem" title="Open in Maps" id="SsF-BD-1zL">
                             <connections>
                                 <action selector="didTapOpenInMaps:" destination="cX3-Ea-Std" id="lgS-KD-era"/>
@@ -544,14 +535,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="countryImageView" destination="jhK-6m-Nmu" id="WjA-te-eyM"/>
+                        <outlet property="placeholderView" destination="z6T-p0-wYl" id="Yj6-ox-kmC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVt-uS-te0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3720.8000000000002" y="-197.45127436281859"/>
         </scene>
-        <!--Title-->
+        <!--Add List-->
         <scene sceneID="LMR-zI-SH2">
             <objects>
                 <tableViewController id="qbP-uc-RLc" customClass="ListFeederTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
@@ -593,7 +584,7 @@
                             <outlet property="delegate" destination="qbP-uc-RLc" id="7FM-Yp-Px0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="7m6-RN-QIJ">
+                    <navigationItem key="navigationItem" title="Add List" id="7m6-RN-QIJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Y1z-RG-x92">
                             <connections>
                                 <segue destination="Rk0-i9-1nU" kind="unwind" identifier="saveUnwind" unwindAction="unwindToListFeederWithSegue:" id="JJK-Su-ecW"/>
@@ -609,11 +600,11 @@
             </objects>
             <point key="canvasLocation" x="3721" y="1150"/>
         </scene>
-        <!--Title-->
+        <!--List-->
         <scene sceneID="T2M-u6-rfo">
             <objects>
                 <tableViewController id="SfJ-Zs-fi2" customClass="ListTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fJR-Mt-5Ow">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fJR-Mt-5Ow">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -649,7 +640,7 @@
                             <outlet property="delegate" destination="SfJ-Zs-fi2" id="TAm-WF-4Re"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="IbK-qV-H4a">
+                    <navigationItem key="navigationItem" title="List" id="IbK-qV-H4a">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="N5p-Pm-MOJ">
                             <connections>
                                 <segue destination="5oL-ba-ZIg" kind="show" identifier="ChangeSegue" id="m3z-KT-lsR"/>
@@ -664,7 +655,7 @@
             </objects>
             <point key="canvasLocation" x="3721" y="466"/>
         </scene>
-        <!--Title-->
+        <!--Edit List-->
         <scene sceneID="La1-UR-bhl">
             <objects>
                 <tableViewController id="5oL-ba-ZIg" customClass="ListChangerTableViewController" customModule="CountryInfo" customModuleProvider="target" sceneMemberID="viewController">
@@ -696,7 +687,7 @@
                             <outlet property="delegate" destination="5oL-ba-ZIg" id="D4Y-PN-SuF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="nAc-OR-QbE">
+                    <navigationItem key="navigationItem" title="Edit List" id="nAc-OR-QbE">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="nXC-Sk-ekP">
                             <connections>
                                 <segue destination="m1d-d3-UVN" kind="unwind" identifier="saveUnwind" unwindAction="unwindToListChangerWithSegue:" id="Hco-LE-6rZ"/>
@@ -771,7 +762,7 @@
         <image name="star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Ce-o5-Qrl"/>
-        <segue reference="k7I-tl-nFI"/>
+        <segue reference="J6L-ty-FFz"/>
+        <segue reference="cr8-IT-Uw1"/>
     </inferredMetricsTieBreakers>
 </document>

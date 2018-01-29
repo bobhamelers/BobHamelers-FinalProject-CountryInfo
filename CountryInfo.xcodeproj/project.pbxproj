@@ -10,6 +10,8 @@
 		180E644E20079DFB008408EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E644D20079DFB008408EF /* LoginViewController.swift */; };
 		180E64502007A537008408EF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E644F2007A537008408EF /* SignUpViewController.swift */; };
 		180E645A2007F237008408EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E64592007F237008408EF /* User.swift */; };
+		182656DC201F417200123BC6 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 182656DB201F417100123BC6 /* world.png */; };
+		182656E2201F483D00123BC6 /* worldSecond.png in Resources */ = {isa = PBXBuildFile; fileRef = 182656E1201F483D00123BC6 /* worldSecond.png */; };
 		1833F8F020039B6B006EAE22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833F8EF20039B6B006EAE22 /* AppDelegate.swift */; };
 		1833F8F220039B6B006EAE22 /* CountryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833F8F120039B6B006EAE22 /* CountryInfoController.swift */; };
 		1833F8F520039B6C006EAE22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F320039B6C006EAE22 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		180E644D20079DFB008408EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = CountryInfo/Controllers/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		180E644F2007A537008408EF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CountryInfo/Controllers/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
 		180E64592007F237008408EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		182656DB201F417100123BC6 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
+		182656E1201F483D00123BC6 /* worldSecond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worldSecond.png; sourceTree = "<group>"; };
 		1833F8EC20039B6B006EAE22 /* CountryInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1833F8EF20039B6B006EAE22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1833F8F120039B6B006EAE22 /* CountryInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoController.swift; sourceTree = "<group>"; };
@@ -126,7 +130,9 @@
 			children = (
 				1833F8EF20039B6B006EAE22 /* AppDelegate.swift */,
 				18C67FEE200922D000E4B84B /* world.gif */,
+				182656DB201F417100123BC6 /* world.png */,
 				18C6801A201959EF00E4B84B /* worldNight.jpg */,
+				182656E1201F483D00123BC6 /* worldSecond.png */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -252,10 +258,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C67FEF200922D000E4B84B /* world.gif in Resources */,
+				182656DC201F417200123BC6 /* world.png in Resources */,
 				1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */,
 				1833F902200779F1006EAE22 /* GoogleService-Info.plist in Resources */,
 				18C6801B201959F100E4B84B /* worldNight.jpg in Resources */,
 				1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */,
+				182656E2201F483D00123BC6 /* worldSecond.png in Resources */,
 				1833F8F520039B6C006EAE22 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +313,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CountryInfo/Pods-CountryInfo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -312,6 +321,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSVG.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
