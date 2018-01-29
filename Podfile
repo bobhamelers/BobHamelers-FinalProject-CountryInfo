@@ -9,5 +9,6 @@ target 'CountryInfo' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'SwiftSVG', '~> 2.0'
 
 end
