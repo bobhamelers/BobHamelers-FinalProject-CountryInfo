@@ -125,7 +125,11 @@ class CountryTableViewController: UITableViewController {
             cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
             return cell
         case [1,2]:
-            cell.labelNumericCode!.text = ("Numeric Code:  ") + countryInfo[0].numericCode!
+            var text = ""
+            if let numericCode = countryInfo[0].numericCode {
+                text += numericCode
+            }
+            cell.labelNumericCode!.text = ("Numeric Code:  ") + text
             return cell
         case [1,3]:
             cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
@@ -159,7 +163,16 @@ class CountryTableViewController: UITableViewController {
             cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
             return cell
         case [5,indexPath.row]:
-            let text = countryInfo[0].currencies![indexPath.row].name! + ", " + countryInfo[0].currencies![indexPath.row].code! + ", " + countryInfo[0].currencies![indexPath.row].symbol!
+            var text = ""
+            if let name = countryInfo[0].currencies![indexPath.row].name {
+                text += name
+            }
+            if let code = countryInfo[0].currencies![indexPath.row].code {
+                text += ", " + code
+            }
+            if let symbol = countryInfo[0].currencies![indexPath.row].symbol {
+                text += ", " + symbol
+            }
             cell.labelCurrencies!.text = ("Currency:  ") + text
             return cell
         case [6,indexPath.row]:
