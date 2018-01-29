@@ -18,9 +18,9 @@ class CountryTableViewController: UITableViewController {
 
     // MARK: Properties.
     let countryInfoController = CountryInfoController()
+    let sectionTitles = ["Name country", "Basic codes of country", "Calling Codes and Timezones", "Basic geographical information", "Regional Partnerships", "Currencies", "Languages"]
     var informations = [Information]()
     var countryInfo = [Information]()
-    let sectionTitles = ["Name country", "Basic codes of country", "Calling Codes and Timezones", "Basic geographical information", "Regional Partnerships", "Currencies", "Languages"]
     
     // MARK: Outlets.
     @IBOutlet weak var placeholderView: UIView!
