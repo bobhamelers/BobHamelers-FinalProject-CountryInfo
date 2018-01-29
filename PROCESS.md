@@ -66,4 +66,14 @@ In the morning I did the daily stand-up with Gavin. Gavin helped me a little bit
 ### day 19(15), 26-01-2018
 In the morning I had the weekly presentations. I showed my MVP and asked if it was okay and they said they think so. After that I fixed some bugs (include the one in my CountryTableViewController) and some in my SignUpViewController and some in my lists. As last, I made some small changes in codequality and some small layout changes. Some of my errors I couldn't fix yet.
 
+### day 20(15), 27-01-2018
+Nothing done.
+
+### day 21 (15), 28-01-2018
+Today I have worked on my Launchscreen and I have changed titles of TableViewControllers and did some changes in the layout. After that, I have installed a pod for SVG images but it didn't succeeded to implement it.
+
+### day 22 (16), 29-01-2018
+In the morning I had daily standup with Jessy and David. We talked about what we are going to do this week. After that, I have fixed my errors with checkmarks and display in the CountryTableViewController. It was difficult, but it is fixed now. Next to that, I commented all the files and controllers and I fixed small errors everywhere. With some help of Marijn, I have kind of fixed my SVG images but it has still bugs. Marijn said that I have to ask Martijn for it, tommorow, to fix this bugs, because he didn't know.
+
+
 [![BCH compliance](https://bettercodehub.com/edge/badge/bobhamelers/BobHamelers-FinalProject-CountryInfo?branch=master)](https://bettercodehub.com/)
