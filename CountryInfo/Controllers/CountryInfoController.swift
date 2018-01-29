@@ -2,6 +2,11 @@
 //  CountryInfoController.swift
 //  CountryInfo
 //
+//  This Controller calls information from a JSON API.
+//  The information is stored in var informations and consists of Information Struct (Informations.swift).
+//  Every controller can call this global var informations.
+//  The fetchCompletion function is called in CountriesTableViewController.
+//
 //  Created by Bob Hamelers on 08/01/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
 //
@@ -11,12 +16,11 @@ import Foundation
 
 class CountryInfoController {
 
+    // MARK: Global constants.
+    static let shared = CountryInfoController()
     var infomations = [Information]()
 
-    // MARK: Global Constant shared CountryInfoController
-    static let shared = CountryInfoController()
-
-    // MARK: Completion function to decode JSON from API with checks
+    /// MARK: Completion function to decode JSON from API with checks.
     func fetchCompletion(completion: @escaping ([Information]?) -> Void) {
         let url = URL(string: "https://restcountries.eu/rest/v2/all")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -26,7 +30,6 @@ class CountryInfoController {
                     let information = try jsonDecoder.decode([Information].self, from: data)
                     self.infomations = information
                     completion(information)
-//                    print(information)
                 } catch {
                     print(error)
                 }
