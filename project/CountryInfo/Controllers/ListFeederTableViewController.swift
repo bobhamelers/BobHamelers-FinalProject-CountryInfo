@@ -88,7 +88,6 @@ class ListFeederTableViewController: UITableViewController {
     
     /// Function that add countries to array and set checkmarks when clicked on row.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
         let information = informations[indexPath.row]
         // Cell for every row and indexpath.
         

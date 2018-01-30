@@ -21,10 +21,12 @@ class CountryTableViewController: UITableViewController {
     var informations = [Information]()
     var countryInfo = [Information]()
     
-    // MARK: Outlets.
-    @IBOutlet weak var placeholderView: UIView!
-    
     // MARK: Actions.
+    /// Function that opens a URL with a SVG image of a flag.
+    @IBAction func didTapFlag(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string: countryInfo[0].flag!)! as URL)
+    }
+    
     /// Fuction that connects to a country map in maps.
     @IBAction func didTapOpenInMaps(_ sender: Any) {
         
@@ -85,60 +87,12 @@ class CountryTableViewController: UITableViewController {
         return nil
     }
     
-    fileprivate func countryName(_ cell: CountryTableViewCell) {
-        cell.labelCountryName!.text = ("Country Name:  ") + countryInfo[0].name!
-    }
-    
-    fileprivate func alphaTwo(_ cell: CountryTableViewCell) {
-        cell.labelAlphaTwo!.text = ("Alpha2 Code:  ") + countryInfo[0].alpha2Code!
-    }
-    
-    fileprivate func alphaThree(_ cell: CountryTableViewCell) {
-        cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
-    }
-    
     fileprivate func numericCode(_ cell: CountryTableViewCell) {
         var text = ""
         if let numericCode = countryInfo[0].numericCode {
             text += numericCode
         }
         cell.labelNumericCode!.text = ("Numeric Code:  ") + text
-    }
-    
-    fileprivate func internetCodes(_ cell: CountryTableViewCell) {
-        cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
-    }
-    
-    fileprivate func callingCodes(_ cell: CountryTableViewCell) {
-        cell.labelCallingCodes!.text = ("Calling Codes:  +") + countryInfo[0].callingCodes!.joined(separator: ", ")
-    }
-    
-    fileprivate func timezones(_ cell: CountryTableViewCell) {
-        cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
-    }
-    
-    fileprivate func capital(_ cell: CountryTableViewCell) {
-        cell.labelCapital!.text = ("Capital:  ") + countryInfo[0].capital!
-    }
-    
-    fileprivate func region(_ cell: CountryTableViewCell) {
-        cell.labelRegion!.text = ("Region:  ") + countryInfo[0].region!
-    }
-    
-    fileprivate func subregion(_ cell: CountryTableViewCell) {
-        cell.labelSubregion!.text = ("Subregion:  ") + countryInfo[0].subregion!
-    }
-    
-    fileprivate func borders(_ cell: CountryTableViewCell) {
-        cell.labelBorders!.text = ("Borders:  ") + countryInfo[0].borders!.joined(separator: ", ")
-    }
-    
-    fileprivate func population(_ cell: CountryTableViewCell) {
-        cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
-    }
-    
-    fileprivate func demonym(_ cell: CountryTableViewCell) {
-        cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
     }
     
     fileprivate func regionalBlocs(_ indexPath: IndexPath, _ cell: CountryTableViewCell) {
@@ -186,15 +140,15 @@ class CountryTableViewController: UITableViewController {
         
         switch (indexPath) {
         case [0,0]:
-            countryName(cell)
+            cell.labelCountryName!.text = ("Country Name:  ") + countryInfo[0].name!
             // Cell content country name.
             return cell
         case [1,0]:
-            alphaTwo(cell)
+            cell.labelAlphaTwo!.text = ("Alpha2 Code:  ") + countryInfo[0].alpha2Code!
             // Cell content country alpha2 code.
             return cell
         case [1,1]:
-            alphaThree(cell)
+            cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
             // Cell content country alpha3 code.
             return cell
         case [1,2]:
@@ -202,39 +156,39 @@ class CountryTableViewController: UITableViewController {
             // Cell content country numeric code with check for emptiness.
             return cell
         case [1,3]:
-            internetCodes(cell)
+            cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
             // Cell content country interenet codes (separated).
             return cell
         case [2,0]:
-            callingCodes(cell)
+            cell.labelCallingCodes!.text = ("Calling Codes:  +") + countryInfo[0].callingCodes!.joined(separator: ", ")
             // Cell content country calling codes (separated).
             return cell
         case [2,1]:
-            timezones(cell)
+            cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
             // Cell content country timezones (separated).
             return cell
         case [3,0]:
-            capital(cell)
+            cell.labelCapital!.text = ("Capital:  ") + countryInfo[0].capital!
             // Cell content country capital.
             return cell
         case [3,1]:
-            region(cell)
+            cell.labelRegion!.text = ("Region:  ") + countryInfo[0].region!
             // Cell content country region.
             return cell
         case [3,2]:
-            subregion(cell)
+            cell.labelSubregion!.text = ("Subregion:  ") + countryInfo[0].subregion!
             // Cell content country subregion.
             return cell
         case [3,3]:
-            borders(cell)
+            cell.labelBorders!.text = ("Borders:  ") + countryInfo[0].borders!.joined(separator: ", ")
             // Cell content country borders in alpha3 code (separated).
             return cell
         case [3,4]:
-            population(cell)
+            cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
             // Cell content country population.
             return cell
         case [3,5]:
-            demonym(cell)
+            cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
             // Cell content country demonym.
             return cell
         case [4,indexPath.row]:
