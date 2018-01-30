@@ -25,28 +25,28 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: Actions.
-    /// MARK: Log out and go back to LoginViewController.
+    /// Log out and go back to LoginViewController.
     @IBAction func logoutDidTouch(_ sender: AnyObject) {
         try! Auth.auth().signOut()
         dismiss(animated: true, completion: nil)
     }
     
-    /// MARK: ViewDidLoad standard.
+    /// ViewDidLoad standard.
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: Call to fetchCompletion function in CountryInfoController for JSON API.
+        // Call to fetchCompletion function in CountryInfoController for JSON API.
         CountryInfoController.shared.fetchCompletion { (info) in
             if let info = info {
                 self.updateUI(with: info)
                 }
             }
         
-        // MARK: Make searchBar (delegate and returnKeyType Keyboard).
+        // Make searchBar (delegate and returnKeyType Keyboard).
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.search
     }
-    /// MARK: Function that is called after fetchCompletion.
+    /// Function that is called after fetchCompletion.
     func updateUI(with info: [Information]) {
         DispatchQueue.main.async {
             self.informations = info
@@ -54,51 +54,45 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
 
-    /// MARK: Function that handles memory warnings.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // MARK: Dispose of any resources that can be recreated.
-    }
-
-    /// MARK: Function that displays rows per section (depending on searching or only looking).
+    /// Function that displays rows per section (depending on searching or only looking).
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if isSearching {
             return filteredData.count
-            // MARK: Amount of rows when user is searching.
+            // Amount of rows when user is searching.
         }
         else {
             return informations.count
-            // MARK: Amount of rows when user is only looking. 
+            // Amount of rows when user is only looking.
         }
     }
     
-    /// MARK: Function that displays content in cells per row (depending on searching or only looking).
+    /// Function that displays content in cells per row (depending on searching or only looking).
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesCellIdentifier", for: indexPath)
-        // MARK: Cell for every row.
+        // Cell for every row.
         
         if isSearching {
             cell.textLabel?.text = filteredData[indexPath.row].name!
-            // MARK: Cell content when user is searching.
+            // Cell content when user is searching.
         }
         else{
             configure(cell: cell, forItemAt: indexPath)
-            // MARK: Call to configure function for cell content when user is looking.
+            // Call to configure function for cell content when user is looking.
         }
         return cell
-        // MARK: Return cell content.
+        // Return cell content.
     }
     
-    /// MARK: Function for cell content when looking.
+    /// Function for cell content when looking.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
         cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
-        // MARK: Cell content when user is looking.
+        // Cell content when user is looking.
     }
     
-    /// MARK: Search function.
+    /// Search function.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             isSearching = false
@@ -106,32 +100,32 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
             view.endEditing(true)
 
             tableView.reloadData()
-            // MARK: Reload TableView when searchbar is empty and start editing possibilities.
+            // Reload TableView when searchbar is empty and start editing possibilities.
         } else {
             isSearching = true
 
             filteredData = informations.filter({$0.name!.contains(searchBar.text as! String) || $0.alpha2Code!.lowercased() == searchBar.text?.lowercased() as! String || $0.alpha3Code!.lowercased() == searchBar.text?.lowercased() as! String})
 
             tableView.reloadData()
-            // MARK: Reload TableView when user is searching with the filtered data. An user can search through data with the (English) name of a country and it's alphacodes.
+            // Reload TableView when user is searching with the filtered data. An user can search through data with the (English) name of a country and it's alphacodes.
         }
     }
     
-    /// MARK: Function that prepares segue for CountryTableViewController when an user clicks on a country and send information of that specific country.
+    /// Function that prepares segue for CountryTableViewController when an user clicks on a country and send information of that specific country.
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
         if segue.identifier == "CountrySegue" {
             let index = self.tableView.indexPathForSelectedRow!.row
             let CountryTableViewController = segue.destination as!
             CountryTableViewController
-            // MARK: Prepare for CountryViewController.
+            // Prepare for CountryViewController.
             
             if isSearching {
                 CountryTableViewController.countryInfo = [filteredData[index]]
             } else {
                 CountryTableViewController.countryInfo = [informations[index]]
             }
-            // MARK: Send specific country information.
+            // Send specific country information.
         }
     }
 }

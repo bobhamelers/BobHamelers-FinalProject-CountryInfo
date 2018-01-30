@@ -17,7 +17,7 @@
 		1833F8F520039B6C006EAE22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F320039B6C006EAE22 /* Main.storyboard */; };
 		1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F620039B6C006EAE22 /* Assets.xcassets */; };
 		1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F820039B6C006EAE22 /* LaunchScreen.storyboard */; };
-		1833F902200779F1006EAE22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1833F901200779F1006EAE22 /* GoogleService-Info.plist */; };
+		1843A5012020BF5C0057454F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1843A5002020BF5B0057454F /* GoogleService-Info.plist */; };
 		18C67FE92008F9F700E4B84B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FE82008F9F700E4B84B /* Gif.swift */; };
 		18C67FEF200922D000E4B84B /* world.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18C67FEE200922D000E4B84B /* world.gif */; };
 		18C67FF1200CCA5300E4B84B /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */; };
@@ -49,7 +49,7 @@
 		1833F8F620039B6C006EAE22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1833F8F920039B6C006EAE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1833F8FB20039B6C006EAE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1833F901200779F1006EAE22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1843A5002020BF5B0057454F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		18C67FE82008F9F700E4B84B /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		18C67FEE200922D000E4B84B /* world.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = world.gif; sourceTree = "<group>"; };
 		18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountriesTableViewController.swift; path = CountryInfo/Controllers/CountriesTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -166,7 +166,7 @@
 				180E644A20079CD3008408EF /* Views */,
 				1833F8F620039B6C006EAE22 /* Assets.xcassets */,
 				1833F8FB20039B6C006EAE22 /* Info.plist */,
-				1833F901200779F1006EAE22 /* GoogleService-Info.plist */,
+				1843A5002020BF5B0057454F /* GoogleService-Info.plist */,
 			);
 			path = CountryInfo;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C67FEF200922D000E4B84B /* world.gif in Resources */,
+				1843A5012020BF5C0057454F /* GoogleService-Info.plist in Resources */,
 				182656DC201F417200123BC6 /* world.png in Resources */,
 				1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */,
-				1833F902200779F1006EAE22 /* GoogleService-Info.plist in Resources */,
 				18C6801B201959F100E4B84B /* worldNight.jpg in Resources */,
 				1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */,
 				182656E2201F483D00123BC6 /* worldSecond.png in Resources */,

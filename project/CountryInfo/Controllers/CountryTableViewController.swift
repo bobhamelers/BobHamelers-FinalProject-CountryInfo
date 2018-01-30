@@ -25,7 +25,7 @@ class CountryTableViewController: UITableViewController {
     @IBOutlet weak var placeholderView: UIView!
     
     // MARK: Actions.
-    /// MARK: Fuction that connects to a country map in maps.
+    /// Fuction that connects to a country map in maps.
     @IBAction func didTapOpenInMaps(_ sender: Any) {
         
         
@@ -35,14 +35,14 @@ class CountryTableViewController: UITableViewController {
         let ilink = elink.replacingOccurrences(of: "[íïìîįīÍÏÌÎĮĪ]", with: "i",options: .regularExpression)
         let olink = ilink.replacingOccurrences(of: "[óöôòõœøōÓÖÔÒÕŒØŌ]", with: "o",options: .regularExpression)
         let ulink = olink.replacingOccurrences(of: "[úüûùūÚÜÛÙŪ]", with: "u",options: .regularExpression)
-        // MARK: Take care of specific characters to avoid an error.
+        // Take care of specific characters to avoid an error.
         
         let link = ulink.replacingOccurrences(of: " ", with: "%20")
         UIApplication.shared.open(NSURL(string: "https://maps.apple.com/?address=\(link)")! as URL, options: [:])
-        // MARK: Go to the specific country URL in maps.
+        // Go to the specific country URL in maps.
     }
     
-    /// MARK: ViewDidLoad standard.
+    /// ViewDidLoad standard.
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -50,18 +50,12 @@ class CountryTableViewController: UITableViewController {
         }
     }
 
-    /// MARK: Function that handles memory warnings.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // MARK: Dispose of any resources that can be recreated.
-    }
-
-    /// MARK: Function that displays amount of sections.
+    /// Function that displays amount of sections.
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 7
     }
 
-    /// MARK: Function that displays rows per section.
+    /// Function that displays rows per section.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
         case 0:
@@ -83,7 +77,7 @@ class CountryTableViewController: UITableViewController {
         }
     }
     
-    /// MARK: Function that displays headers per section from sectionTitles array.
+    /// Function that displays headers per section from sectionTitles array.
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section >= 0 && section <= 6 {
             return sectionTitles[section]
@@ -91,7 +85,7 @@ class CountryTableViewController: UITableViewController {
         return nil
     }
     
-    /// MARK: Function that displays content in cells per row.
+    /// Function that displays content in cells per row.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var identifier: String
         
@@ -104,24 +98,24 @@ class CountryTableViewController: UITableViewController {
         case 5: identifier = "section5Cell"
         case 6: identifier = "section6Cell"
         default: identifier = ""
-        // MARK: Make a case in switch of every section.
+        // Make a case in switch of every section.
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CountryTableViewCell
-        // MARK: Cell for every row.
+        // Cell for every row.
         
         switch (indexPath) {
         case [0,0]:
             cell.labelCountryName!.text = ("Country Name:  ") + countryInfo[0].name!
-            // MARK: Cell content country name.
+            // Cell content country name.
             return cell
         case [1,0]:
             cell.labelAlphaTwo!.text = ("Alpha2 Code:  ") + countryInfo[0].alpha2Code!
-            // MARK: Cell content country alpha2 code.
+            // Cell content country alpha2 code.
             return cell
         case [1,1]:
             cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
-            // MARK: Cell content country alpha3 code.
+            // Cell content country alpha3 code.
             return cell
         case [1,2]:
             var text = ""
@@ -129,48 +123,48 @@ class CountryTableViewController: UITableViewController {
                 text += numericCode
             }
             cell.labelNumericCode!.text = ("Numeric Code:  ") + text
-            // MARK: Cell content country numeric code with check for emptiness.
+            // Cell content country numeric code with check for emptiness.
             return cell
         case [1,3]:
             cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
-            // MARK: Cell content country interenet codes (separated).
+            // Cell content country interenet codes (separated).
             return cell
         case [2,0]:
             cell.labelCallingCodes!.text = ("Calling Codes:  +") + countryInfo[0].callingCodes!.joined(separator: ", ")
-            // MARK: Cell content country calling codes (separated).
+            // Cell content country calling codes (separated).
             return cell
         case [2,1]:
             cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
-            // MARK: Cell content country timezones (separated).
+            // Cell content country timezones (separated).
             return cell
         case [3,0]:
             cell.labelCapital!.text = ("Capital:  ") + countryInfo[0].capital!
-            // MARK: Cell content country capital.
+            // Cell content country capital.
             return cell
         case [3,1]:
             cell.labelRegion!.text = ("Region:  ") + countryInfo[0].region!
-            // MARK: Cell content country region.
+            // Cell content country region.
             return cell
         case [3,2]:
             cell.labelSubregion!.text = ("Subregion:  ") + countryInfo[0].subregion!
-            // MARK: Cell content country subregion.
+            // Cell content country subregion.
             return cell
         case [3,3]:
             cell.labelBorders!.text = ("Borders (Alpha3Code):  ") + countryInfo[0].borders!.joined(separator: ", ")
-            // MARK: Cell content country borders in alpha3 code (separated).
+            // Cell content country borders in alpha3 code (separated).
             return cell
         case [3,4]:
             cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
-            // MARK: Cell content country population.
+            // Cell content country population.
             return cell
         case [3,5]:
             cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
-            // MARK: Cell content country demonym.
+            // Cell content country demonym.
             return cell
         case [4,indexPath.row]:
             let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
             cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
-            // MARK: Cells content country in regional blocs (acronym and name) per row.
+            // Cells content country in regional blocs (acronym and name) per row.
             return cell
         case [5,indexPath.row]:
             var text = ""
@@ -184,18 +178,18 @@ class CountryTableViewController: UITableViewController {
                 text += symbol
             }
             cell.labelCurrencies!.text = ("Currency:  ") + text
-            // MARK: Cells content country in currencies (name, code and symbol) per row with check for emptiness.
+            // Cells content country in currencies (name, code and symbol) per row with check for emptiness.
             return cell
         case [6,indexPath.row]:
             let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
             cell.labelLanguages!.text = ("Language:  ") + text
-            // MARK: Cells content country in languages (name and native name) per row.
+            // Cells content country in languages (name and native name) per row.
             return cell
         
         default: break
-        // MARK: break
+        // Break
         }
         return UITableViewCell()
-        // MARK: Return content
+        // Return content
     }
 }

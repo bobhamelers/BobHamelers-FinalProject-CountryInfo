@@ -24,96 +24,90 @@ class ListChangerTableViewController: UITableViewController {
     let ref = Database.database().reference(withPath: "users")
     let userID = Auth.auth().currentUser?.uid
     
-    /// MARK: ViewDidLoad standard.
+    /// ViewDidLoad standard.
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.informations = CountryInfoController.shared.infomations
-        // MARK: Store information of all countries in informations.
+        // Store information of all countries in informations.
         
         for countryOnly in 0..<(listInfo[0].countryIsAlphaCode2.count){
             countries.append(listInfo[0].countryIsAlphaCode2[countryOnly])
-            // MARK: Get an array of countries (based on alpha2 code) from the right list.
+            // Get an array of countries (based on alpha2 code) from the right list.
         }
     }
     
-    /// MARK: Save button update function to FireBase.
+    /// Save button update function to FireBase.
     func updateSaveButtonState() {
         
         let currentUser = self.ref.child(self.userID!)
         let listname = currentUser.child("lists").child(listInfo[0].listName)
-        // MARK: Get current user and the right listname from FireBase.
+        // Get current user and the right listname from FireBase.
         
         listname.ref.removeValue()
-        // MARK: Delete the old list from FireBase.
+        // Delete the old list from FireBase.
         
         for country in countries{
             listname.child(country).child("name").setValue(country)
-            // MARK: add new countries in right list to FireBase.
+            // Add new countries in right list to FireBase.
         }
     }
     
-    /// MARK: Function that handles memory warnings.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // MARK: Dispose of any resources that can be recreated.
-    }
-    
-    /// MARK: Function that displays rows per section.
+    /// Function that displays rows per section.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return informations.count
     }
     
-    /// MARK: Function that displays content in cells per row.
+    /// Function that displays content in cells per row.
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListChangerCellIdentifier", for: indexPath) as! ListTableViewCell
-        // MARK: Cell for every row.
+        // Cell for every row.
         
         configure(cell: cell, forItemAt: indexPath)
-        // MARK: Call to configure function for cell content.
+        // Call to configure function for cell content.
         
         cell.accessoryType = .none
         for country in (0..<countries.count) {
             if informations[indexPath.row].alpha2Code == countries[country] {
                 cell.accessoryType = .checkmark
-                // MARK: Set checkmarks on none except for rows with country information from array countries.
+                // Set checkmarks on none except for rows with country information from array countries.
             }
         }
         return cell
     }
     
-    /// MARK: Function that add countries to array and set checkmarks when clicked on row.
+    /// Function that add countries to array and set checkmarks when clicked on row.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
-        // MARK: Cell for every row and indexpath.
+        // Cell for every row and indexpath.
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
             countries = countries.filter{$0 != information.alpha2Code}
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
-            // MARK: Checkmark off and delete country from countries array.
+            // Checkmark off and delete country from countries array.
         } else {
             countries.append(information.alpha2Code!)
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-            // MARK: Checkmark on and add country to countries array.
+            // Checkmark on and add country to countries array.
         }
     }
     
-    /// MARK: Function for cell content.
+    /// Function for cell content.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
         cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
-        // MARK: Cell content.
+        // Cell content.
     }
     
-    /// MARK: Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
+    /// Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "saveUnwind" {
             if segue.destination is ListsTableViewController {
-            // MARK: Prepare for ListsTableViewController.
+            // Prepare for ListsTableViewController.
                 updateSaveButtonState()
-                // MARK: Call for updateSaveButtonState.
+                // Call for updateSaveButtonState.
                 
             }
         }

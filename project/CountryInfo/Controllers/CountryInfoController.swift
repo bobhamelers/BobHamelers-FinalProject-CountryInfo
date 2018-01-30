@@ -20,7 +20,7 @@ class CountryInfoController {
     static let shared = CountryInfoController()
     var infomations = [Information]()
 
-    /// MARK: Completion function to decode JSON from API with checks.
+    /// Completion function to decode JSON from API with checks.
     func fetchCompletion(completion: @escaping ([Information]?) -> Void) {
         let url = URL(string: "https://restcountries.eu/rest/v2/all")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

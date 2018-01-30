@@ -35,13 +35,13 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCurrencies: UILabel?
     @IBOutlet weak var labelLanguages: UILabel?
     
-    /// MARK: AwakeFromNib.
+    /// AwakeFromNib.
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    /// MARK: Set Selected.
+    /// Set Selected.
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

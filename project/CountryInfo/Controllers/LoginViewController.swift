@@ -31,53 +31,47 @@ class LoginViewController: UIViewController {
                            password: textFieldLoginPassword.text!, completion: { (user, error) in if(error != nil){
                             self.createAlert(title: "FAILURE", message: "Your E-mail, Password or both are incorrect or not known")
                             }})
-        // MARK: Login authentication when e-mail and password a correct and filled in.
+        // Login authentication when e-mail and password a correct and filled in.
     }
     
-    /// MARK: Function, dismiss keyboard.
+    /// Function, dismiss keyboard.
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         textFieldLoginEmail.resignFirstResponder()
         textFieldLoginPassword.resignFirstResponder()
     }
     
-    /// MARK: ViewDidLoad standard.
+    /// ViewDidLoad standard.
     override func viewDidLoad() {
         super.viewDidLoad()
         GifView.loadGif(name: "world")
-        // MARK: Load GIF file.
+        // Load GIF file.
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
-        // MARK: Recognizer for DismissKeyboard.
+        // Recognizer for DismissKeyboard.
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: self.loginSeague, sender: nil)
             }
         }
-        // MARK: Recognizer for user authentication.
+        // Recognizer for user authentication.
     }
     
-    /// MARK: Create alert function that displays a popup.
+    /// Create alert function that displays a popup.
     func createAlert (title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
-        // MARK: Alert function with title (Okay) and message for different alerts.
-    }
-
-    /// MARK: Function that handles memory warnings.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // MARK: Dispose of any resources that can be recreated.
+        // Alert function with title (Okay) and message for different alerts.
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
     
-    /// MARK: Return textfields.
+    /// Return textfields.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == textFieldLoginEmail {
             textFieldLoginPassword.becomeFirstResponder()
@@ -87,5 +81,5 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-    // MARK: Return function in extension to return information in textfields.
+    // Return function in extension to return information in textfields.
 }

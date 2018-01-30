@@ -32,109 +32,103 @@ class ListFeederTableViewController: UITableViewController {
         titleTextField.resignFirstResponder()
     }
     
-    /// MARK: ViewDidLoad standard.
+    /// ViewDidLoad standard.
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.informations = CountryInfoController.shared.infomations
-        // MARK: Store information of all countries in informations.
+        // Store information of all countries in informations.
     }
     
-    /// MARK: Save button update function to FireBase.
+    /// Save button update function to FireBase.
     func updateSaveButtonState() {
         let titleList = titleTextField.text!
         if titleList == "" {
             createAlert(title: "FAILURE", message: "You have to type a listname in the section above the countries!")
-            // MARK: Alert if there is no new listname written.
+            // Alert if there is no new listname written.
         } else if countries.count == 0{
             createAlert(title: "FAILURE", message: "You have not selected any country!")
-            // MARK: Alert if there are no countries selected.
+            // Alert if there are no countries selected.
         } else {
             
             let currentUser = self.ref.child(self.userID!)
             let listname = currentUser.child("lists").child(titleList)
-            // MARK: Get current user and the right listname from FireBase.
+            // Get current user and the right listname from FireBase.
             
             for country in countries{
                 listname.child(country).child("name").setValue(country)
-                // MARK: add new countries in right list to FireBase.
+                // Add new countries in right list to FireBase.
             }
         }
     }
-
-    /// MARK: Function that handles memory warnings.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // MARK: Dispose of any resources that can be recreated.
-    }
     
-    /// MARK: Function that displays rows per section.
+    /// Function that displays rows per section.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return informations.count
     }
     
-    /// MARK: Function that displays content in cells per row.
+    /// Function that displays content in cells per row.
     override func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
-        // MARK: Cell for every row.
+        // Cell for every row.
         
         configure(cell: cell, forItemAt: indexPath)
-        // MARK: Call to configure function for cell content.
+        // Call to configure function for cell content.
         
         cell.accessoryType = .none
         for country in (0..<countries.count) {
             if informations[indexPath.row].alpha2Code == countries[country] {
                 cell.accessoryType = .checkmark
-                // MARK: Set checkmarks on none except for rows with country information from array countries.
+                // Set checkmarks on none except for rows with country information from array countries.
             }
         }
         return cell
     }
     
-    /// MARK: Function that add countries to array and set checkmarks when clicked on row.
+    /// Function that add countries to array and set checkmarks when clicked on row.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
         let information = informations[indexPath.row]
-        // MARK: Cell for every row and indexpath.
+        // Cell for every row and indexpath.
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
             countries = countries.filter{$0 != information.alpha2Code}
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
-            // MARK: Checkmark off and delete country from countries array.
+            // Checkmark off and delete country from countries array.
         } else {
             countries.append(information.alpha2Code!)
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-            // MARK: Checkmark on and add country to countries array.
+            // Checkmark on and add country to countries array.
         }
     }
     
-    /// MARK: Function for cell content.
+    /// Function for cell content.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
         cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
-        // MARK: Cell content.
+        // Cell content.
     }
     
-    /// MARK: Create alert function that displays a popup.
+    /// Create alert function that displays a popup.
     func createAlert (title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
-        // MARK: Alert function with title (Okay) and message for different alerts.
+        // Alert function with title (Okay) and message for different alerts.
     }
     
     
-    /// MARK: Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
+    /// Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "saveUnwind" {
             if segue.destination is ListsTableViewController {
-                // MARK: Prepare for ListsTableViewController.
+                // Prepare for ListsTableViewController.
                 updateSaveButtonState()
-                // MARK: Call for updateSaveButtonState.
+                // Call for updateSaveButtonState.
             }
         }
     }
