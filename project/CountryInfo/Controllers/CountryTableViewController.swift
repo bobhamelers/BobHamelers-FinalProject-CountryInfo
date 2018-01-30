@@ -85,6 +85,19 @@ class CountryTableViewController: UITableViewController {
         return nil
     }
     
+    fileprivate func numericCode(_ cell: CountryTableViewCell) {
+        var text = ""
+        if let numericCode = countryInfo[0].numericCode {
+            text += numericCode
+        }
+        cell.labelNumericCode!.text = ("Numeric Code:  ") + text
+    }
+    
+    fileprivate func regionalBlocs(_ indexPath: IndexPath, _ cell: CountryTableViewCell) {
+        let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
+        cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
+    }
+    
     fileprivate func currency(_ indexPath: IndexPath, _ cell: CountryTableViewCell) {
         var text = ""
         if let name = countryInfo[0].currencies![indexPath.row].name {
@@ -97,6 +110,11 @@ class CountryTableViewController: UITableViewController {
             text += symbol
         }
         cell.labelCurrencies!.text = ("Currency:  ") + text
+    }
+    
+    fileprivate func languages(_ indexPath: IndexPath, _ cell: CountryTableViewCell) {
+        let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
+        cell.labelLanguages!.text = ("Language:  ") + text
     }
     
     /// Function that displays content in cells per row.
@@ -132,11 +150,7 @@ class CountryTableViewController: UITableViewController {
             // Cell content country alpha3 code.
             return cell
         case [1,2]:
-            var text = ""
-            if let numericCode = countryInfo[0].numericCode {
-                text += numericCode
-            }
-            cell.labelNumericCode!.text = ("Numeric Code:  ") + text
+            numericCode(cell)
             // Cell content country numeric code with check for emptiness.
             return cell
         case [1,3]:
@@ -164,7 +178,7 @@ class CountryTableViewController: UITableViewController {
             // Cell content country subregion.
             return cell
         case [3,3]:
-            cell.labelBorders!.text = ("Borders (Alpha3Code):  ") + countryInfo[0].borders!.joined(separator: ", ")
+            cell.labelBorders!.text = ("Borders:  ") + countryInfo[0].borders!.joined(separator: ", ")
             // Cell content country borders in alpha3 code (separated).
             return cell
         case [3,4]:
@@ -176,8 +190,7 @@ class CountryTableViewController: UITableViewController {
             // Cell content country demonym.
             return cell
         case [4,indexPath.row]:
-            let text = countryInfo[0].regionalBlocs![indexPath.row].acronym! + ", " + countryInfo[0].regionalBlocs![indexPath.row].name!
-            cell.labelRegionalBlocs!.text = ("Regional Bloc:  ") + text
+            regionalBlocs(indexPath, cell)
             // Cells content country in regional blocs (acronym and name) per row.
             return cell
         case [5,indexPath.row]:
@@ -185,8 +198,7 @@ class CountryTableViewController: UITableViewController {
             // Cells content country in currencies (name, code and symbol) per row with check for emptiness.
             return cell
         case [6,indexPath.row]:
-            let text = countryInfo[0].languages![indexPath.row].name! + ", (" + countryInfo[0].languages![indexPath.row].nativeName! + ")"
-            cell.labelLanguages!.text = ("Language:  ") + text
+            languages(indexPath, cell)
             // Cells content country in languages (name and native name) per row.
             return cell
         
