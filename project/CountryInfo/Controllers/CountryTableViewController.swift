@@ -85,6 +85,20 @@ class CountryTableViewController: UITableViewController {
         return nil
     }
     
+    fileprivate func currency(_ indexPath: IndexPath, _ cell: CountryTableViewCell) {
+        var text = ""
+        if let name = countryInfo[0].currencies![indexPath.row].name {
+            text += name + ", "
+        }
+        if let code = countryInfo[0].currencies![indexPath.row].code {
+            text += code + ", "
+        }
+        if let symbol = countryInfo[0].currencies![indexPath.row].symbol {
+            text += symbol
+        }
+        cell.labelCurrencies!.text = ("Currency:  ") + text
+    }
+    
     /// Function that displays content in cells per row.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var identifier: String
@@ -167,17 +181,7 @@ class CountryTableViewController: UITableViewController {
             // Cells content country in regional blocs (acronym and name) per row.
             return cell
         case [5,indexPath.row]:
-            var text = ""
-            if let name = countryInfo[0].currencies![indexPath.row].name {
-                text += name + ", "
-            }
-            if let code = countryInfo[0].currencies![indexPath.row].code {
-                text += code + ", "
-            }
-            if let symbol = countryInfo[0].currencies![indexPath.row].symbol {
-                text += symbol
-            }
-            cell.labelCurrencies!.text = ("Currency:  ") + text
+            currency(indexPath, cell)
             // Cells content country in currencies (name, code and symbol) per row with check for emptiness.
             return cell
         case [6,indexPath.row]:
