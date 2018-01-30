@@ -11,9 +11,6 @@
 import UIKit
 
 class ListTableViewCell: UITableViewCell {
-
-    // MARK: Outlets.
-    @IBOutlet weak var titleLabel: UILabel!
     
     /// MARK: AwakeFromNib.
     override func awakeFromNib() {

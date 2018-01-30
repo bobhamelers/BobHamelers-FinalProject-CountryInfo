@@ -85,7 +85,6 @@ class ListChangerTableViewController: UITableViewController {
     
     /// MARK: Function that add countries to array and set checkmarks when clicked on row.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListChangerCellIdentifier", for: indexPath) as! ListTableViewCell
         let information = informations[indexPath.row]
         // MARK: Cell for every row and indexpath.
         

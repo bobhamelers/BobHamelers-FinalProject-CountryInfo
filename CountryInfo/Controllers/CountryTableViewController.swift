@@ -12,7 +12,6 @@
 //
 
 import UIKit
-import SwiftSVG
 
 class CountryTableViewController: UITableViewController {
 
@@ -46,28 +45,9 @@ class CountryTableViewController: UITableViewController {
     /// MARK: ViewDidLoad standard.
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateUI(with: countryInfo)
-//        self.countryImageView(with: countryInfo)
-    }
-
-    /// MARK: Function that is called to reload TableView.
-    func updateUI(with countryInfo: [Information]) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-    }
-    
-    /// MARK: Functions that is called to display the country flag.
-    func countryImageView(with countryInfo: [Information]) {
-        
-        let link = countryInfo[0].flag!
-        let svgURL = URL(string: link)!
-        let hammock = UIView(SVGURL: svgURL) { (svgLayer) in
-            svgLayer.resizeToFit(self.view.bounds)
-        }
-//        self.view.layer.addSublayer(hammock)
-        self.placeholderView.addSubview(hammock)
-        // MARK: Convert SVG image from URL into a View in Controller.
     }
 
     /// MARK: Function that handles memory warnings.
