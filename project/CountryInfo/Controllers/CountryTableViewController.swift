@@ -85,12 +85,60 @@ class CountryTableViewController: UITableViewController {
         return nil
     }
     
+    fileprivate func countryName(_ cell: CountryTableViewCell) {
+        cell.labelCountryName!.text = ("Country Name:  ") + countryInfo[0].name!
+    }
+    
+    fileprivate func alphaTwo(_ cell: CountryTableViewCell) {
+        cell.labelAlphaTwo!.text = ("Alpha2 Code:  ") + countryInfo[0].alpha2Code!
+    }
+    
+    fileprivate func alphaThree(_ cell: CountryTableViewCell) {
+        cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
+    }
+    
     fileprivate func numericCode(_ cell: CountryTableViewCell) {
         var text = ""
         if let numericCode = countryInfo[0].numericCode {
             text += numericCode
         }
         cell.labelNumericCode!.text = ("Numeric Code:  ") + text
+    }
+    
+    fileprivate func internetCodes(_ cell: CountryTableViewCell) {
+        cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
+    }
+    
+    fileprivate func callingCodes(_ cell: CountryTableViewCell) {
+        cell.labelCallingCodes!.text = ("Calling Codes:  +") + countryInfo[0].callingCodes!.joined(separator: ", ")
+    }
+    
+    fileprivate func timezones(_ cell: CountryTableViewCell) {
+        cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
+    }
+    
+    fileprivate func capital(_ cell: CountryTableViewCell) {
+        cell.labelCapital!.text = ("Capital:  ") + countryInfo[0].capital!
+    }
+    
+    fileprivate func region(_ cell: CountryTableViewCell) {
+        cell.labelRegion!.text = ("Region:  ") + countryInfo[0].region!
+    }
+    
+    fileprivate func subregion(_ cell: CountryTableViewCell) {
+        cell.labelSubregion!.text = ("Subregion:  ") + countryInfo[0].subregion!
+    }
+    
+    fileprivate func borders(_ cell: CountryTableViewCell) {
+        cell.labelBorders!.text = ("Borders:  ") + countryInfo[0].borders!.joined(separator: ", ")
+    }
+    
+    fileprivate func population(_ cell: CountryTableViewCell) {
+        cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
+    }
+    
+    fileprivate func demonym(_ cell: CountryTableViewCell) {
+        cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
     }
     
     fileprivate func regionalBlocs(_ indexPath: IndexPath, _ cell: CountryTableViewCell) {
@@ -138,15 +186,15 @@ class CountryTableViewController: UITableViewController {
         
         switch (indexPath) {
         case [0,0]:
-            cell.labelCountryName!.text = ("Country Name:  ") + countryInfo[0].name!
+            countryName(cell)
             // Cell content country name.
             return cell
         case [1,0]:
-            cell.labelAlphaTwo!.text = ("Alpha2 Code:  ") + countryInfo[0].alpha2Code!
+            alphaTwo(cell)
             // Cell content country alpha2 code.
             return cell
         case [1,1]:
-            cell.labelAlphaThree!.text = ("Alpha3 Code:  ") + countryInfo[0].alpha3Code!
+            alphaThree(cell)
             // Cell content country alpha3 code.
             return cell
         case [1,2]:
@@ -154,39 +202,39 @@ class CountryTableViewController: UITableViewController {
             // Cell content country numeric code with check for emptiness.
             return cell
         case [1,3]:
-            cell.labelInternetCodes!.text = ("Internet (Domain) Codes:  ") + countryInfo[0].topLevelDomain!.joined(separator: ", ")
+            internetCodes(cell)
             // Cell content country interenet codes (separated).
             return cell
         case [2,0]:
-            cell.labelCallingCodes!.text = ("Calling Codes:  +") + countryInfo[0].callingCodes!.joined(separator: ", ")
+            callingCodes(cell)
             // Cell content country calling codes (separated).
             return cell
         case [2,1]:
-            cell.labelTimezones!.text = ("Timezones:  ") + countryInfo[0].timezones!.joined(separator: ", ")
+            timezones(cell)
             // Cell content country timezones (separated).
             return cell
         case [3,0]:
-            cell.labelCapital!.text = ("Capital:  ") + countryInfo[0].capital!
+            capital(cell)
             // Cell content country capital.
             return cell
         case [3,1]:
-            cell.labelRegion!.text = ("Region:  ") + countryInfo[0].region!
+            region(cell)
             // Cell content country region.
             return cell
         case [3,2]:
-            cell.labelSubregion!.text = ("Subregion:  ") + countryInfo[0].subregion!
+            subregion(cell)
             // Cell content country subregion.
             return cell
         case [3,3]:
-            cell.labelBorders!.text = ("Borders:  ") + countryInfo[0].borders!.joined(separator: ", ")
+            borders(cell)
             // Cell content country borders in alpha3 code (separated).
             return cell
         case [3,4]:
-            cell.labelPopulation!.text = ("Population:  ") + "\(String(describing: countryInfo[0].population!))" + (" inhabitants")
+            population(cell)
             // Cell content country population.
             return cell
         case [3,5]:
-            cell.labelDemonym!.text = ("Demonym:  ") + countryInfo[0].demonym!
+            demonym(cell)
             // Cell content country demonym.
             return cell
         case [4,indexPath.row]:
