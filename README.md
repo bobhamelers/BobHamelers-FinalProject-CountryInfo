@@ -2,28 +2,34 @@
 
 Title (application name): CountryInfo (Country Informer)
 
-Name: Bob Hamelers
+Name (developer): Bob Hamelers
 
-Studentnumber: 11055901
+Studentnumber University of Amsterdam: 11055901
 
 
-### Paragraph Summary
+## Paragraph Summary
 1. Product
-    1. screenshot overview
-    2. copyright statement
+    1. Screenshot Overview
+    2. Copyright Statement
+    3. Install
+        1. Essential External Components
+        2. Essential External Images and Files
+    4. Purpose
+        1. About
+    5. Functionality and Working
 2. Proposal
-    1. summary
-    2. problem and solution
-    3. visual sketch of minimum viable product (MVP)
-    4. main features
-        1. minimum viable product (mvp)
-        2. optional parts
-    5. prerequisites
-        1. data sources
-        2. external components
-        3. similar apps
-        4. hardest parts (by beginning)
-3. Visualisation
+    1. Summary
+    2. Problem and Solution
+    3. Visual Sketch of Minimum Viable Product (MVP)
+    4. Main Features
+        1. Minimum Viable Product (MVP)
+        2. Optional Parts
+    5. Prerequisites
+        1. Data Sources
+        2. External Components
+        3. Similar Apps
+        4. Hardest Parts (by beginning)
+3. Visualisation of Minimum Viable Product (MVP)
 4. Logbook
 
 
@@ -35,8 +41,39 @@ Studentnumber: 11055901
 ### Copyright Statement
 This document is a public domain release. See for more information the LICENSE file in this repository.
 
+### Install
+To install this app, download the hole project folder.
+A user needs Xcode with simulator or Xcode with an Apple device.
+Start "CountryInfo.xcworkspace" instead of "CountryInfo.xcodeproj" .
+
+#### Essential External Components
+This app uses two external components, which are essential for this app to work.
+
+First, the data in this app is from a data source: [Data](https://restcountries.eu) . The app will ask for data in the "CountryInfoController.swift"
+
+Second, this app has a connection with Firebase to store account settings and information (lists) of a user: [Firebase](https://firebase.google.com) . The app will connect to Firebase with the "Podfile(.lock)", "GoogleService-Info.plist" and settings in the "AppDelegate.swift" . In almost every .swift file Firebase is used. You don't have to download something from Firebase to let this app work in Xcode, everything is already installed.
+
+#### Essential External Images and Files
+1. The "Gif.swift" file is downloaded by Bob Hamelers from [data](https://github.com/bahlo/SwiftGif/blob/master/SwiftGifCommon/UIImage%2BGif.swift) and is created by Arne Bahlo on 07.06.14.
+2. The "world.gif" file is downloaded by Bob Hamelers from [data](https://giphy.com/gifs/gif-artists-world-map-r0vv4zXdq24rS) and is created by [site](http://manashsubhaditya.blogspot.nl/p/world-atlas-and-geogrphy.html) .
+3. The "world.png" file is downloaded by Bob Hamelers from [data](https://www.usnews.com/opinion/blogs/world-report) and is created by [site](usnews.com) .
+4. The "worldSecond.png" file is mutated by Bob Hamelers and is a changed version of "world.png".
+5. The "worldNight.jpeg" file is downloaded by Bob Hamelers from [data](http://cdn.osxdaily.com/wp-content/uploads/2012/12/earth-at-night-europe-africa.jpeg) and is created by Apple.
+6. The AppIcon in "Assets.xcassets"-->"Appicon.appiconset" is a mutated version by Bob Hamelers from "world.png"
+7. The Tab Icons from the "Tab Bar Controller" in "Assets.xcassets"-->"star.imageset" and "Assets.xcassets"-->"earth-usa.imageset" are downloaded by Bob Hamelers from [data](http://www.iconbeast.com/free/) .
+
+### Purpose
+The purpose of this app is to give a user information about countries (for example: languages, currencies, regional blocs, flag, map etc.) . Next to that, a user can make lists with countries. Therefor he or she has to sign up/login to store this lists on a database. This app is usefull for every traveler, international worker and person that needs country information for his or her work/study.
+
+#### About
+The information and selection of countries comes from an [API](https://restcountries.eu) . The developer of this app, Bob Hamelers, is not responsible for choices of countries and associated data. Political sensitivities are not attributable to the developer of this app, Bob Hamelers. Bob Hamelers does not guarantee any errors, bugs or other technical implications and cannot guarantee that the app will work at all times and at all places.
+
+### Functionality and Working
+See the REPORT file.
+
 
 ## Proposal
+See the DESIGN file for extensive information.
 
 ### Summary
 This is an app that provides a lot of information about a specific country in a short easy way with an API. 
@@ -65,7 +102,7 @@ For many kinds of subjects it is useful to quickly have an app that displays inf
 
 #### Optional Parts
 1. Import images and Google Maps API (for place in world).
-2. Share county information.
+2. Share country information.
 3. Better search function (for example on language or regio or maybe interests).
 4. Different quizes about countries.
 5. Extra Wikipedia information (think of history, demography, geography etc.).
@@ -78,7 +115,10 @@ For many kinds of subjects it is useful to quickly have an app that displays inf
 1. [Information per country API](https://restcountries.eu)
 
 #### External Components
-1. [FireBase](https://firebase.google.com)
+1. [FireBase](https://firebase.google.com) (use Cocoapods)
+''''
+pod install (firebase)
+''''
 2. [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) Eventually
 3. [PermisionScope](https://github.com/nickoneill/PermissionScope) Eventually
 4. [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) Eventually
