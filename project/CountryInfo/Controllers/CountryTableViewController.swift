@@ -31,15 +31,8 @@ class CountryTableViewController: UITableViewController {
     @IBAction func didTapOpenInMaps(_ sender: Any) {
         
         
-        let alink = countryInfo[0].name!.replacingOccurrences(of: "[áäâàæãåāÁÄÂÀÆÃÅĀ]", with: "a",options: .regularExpression)
-        let clink = alink.replacingOccurrences(of: "[çÇ]", with: "c",options: .regularExpression)
-        let elink = clink.replacingOccurrences(of: "[éëêèęėēÉËÊÈĘĖĒ]", with: "e",options: .regularExpression)
-        let ilink = elink.replacingOccurrences(of: "[íïìîįīÍÏÌÎĮĪ]", with: "i",options: .regularExpression)
-        let olink = ilink.replacingOccurrences(of: "[óöôòõœøōÓÖÔÒÕŒØŌ]", with: "o",options: .regularExpression)
-        let ulink = olink.replacingOccurrences(of: "[úüûùūÚÜÛÙŪ]", with: "u",options: .regularExpression)
-        // Take care of specific characters to avoid an error.
-        
-        let link = ulink.replacingOccurrences(of: " ", with: "%20")
+        let myLink = countryInfo[0].name!.folding(options: .diacriticInsensitive, locale: .current)
+        let link = myLink.replacingOccurrences(of: " ", with: "%20")
         UIApplication.shared.open(NSURL(string: "https://maps.apple.com/?address=\(link)")! as URL, options: [:])
         // Go to the specific country URL in maps.
     }

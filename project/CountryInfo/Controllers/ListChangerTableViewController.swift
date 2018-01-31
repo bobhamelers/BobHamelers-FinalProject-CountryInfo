@@ -37,6 +37,11 @@ class ListChangerTableViewController: UITableViewController {
         }
     }
     
+    /// Function that displays rows per section.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return informations.count
+    }
+    
     /// Save button update function to FireBase.
     func updateSaveButtonState() {
         
@@ -51,11 +56,6 @@ class ListChangerTableViewController: UITableViewController {
             listname.child(country).child("name").setValue(country)
             // Add new countries in right list to FireBase.
         }
-    }
-    
-    /// Function that displays rows per section.
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return informations.count
     }
     
     /// Function that displays content in cells per row.
@@ -77,6 +77,13 @@ class ListChangerTableViewController: UITableViewController {
         return cell
     }
     
+    /// Function for cell content.
+    func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+        let information = informations[indexPath.row]
+        cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
+        // Cell content.
+    }
+    
     /// Function that add countries to array and set checkmarks when clicked on row.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let information = informations[indexPath.row]
@@ -91,13 +98,6 @@ class ListChangerTableViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             // Checkmark on and add country to countries array.
         }
-    }
-    
-    /// Function for cell content.
-    func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let information = informations[indexPath.row]
-        cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
-        // Cell content.
     }
     
     /// Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.

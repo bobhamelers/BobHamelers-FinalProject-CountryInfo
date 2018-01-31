@@ -85,13 +85,6 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
         // Return cell content.
     }
     
-    /// Function for cell content when looking.
-    func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let information = informations[indexPath.row]
-        cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
-        // Cell content when user is looking.
-    }
-    
     /// Search function.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
@@ -109,6 +102,13 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate {
             tableView.reloadData()
             // Reload TableView when user is searching with the filtered data. An user can search through data with the (English) name of a country and it's alphacodes.
         }
+    }
+    
+    /// Function for cell content when looking.
+    func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+        let information = informations[indexPath.row]
+        cell.textLabel?.text = (information.name! + " (" + information.alpha2Code! + ")")
+        // Cell content when user is looking.
     }
     
     /// Function that prepares segue for CountryTableViewController when an user clicks on a country and send information of that specific country.
