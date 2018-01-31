@@ -73,10 +73,12 @@ class ListFeederTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListFeederCellIdentifier", for: indexPath) as! ListTableViewCell
         // Cell for every row.
         
+        cell.accessoryType = .none
+        // Cell checkmark on none.
+        
         configure(cell: cell, forItemAt: indexPath)
         // Call to configure function for cell content.
         
-        cell.accessoryType = .none
         for country in (0..<countries.count) {
             if informations[indexPath.row].alpha2Code == countries[country] {
                 cell.accessoryType = .checkmark
