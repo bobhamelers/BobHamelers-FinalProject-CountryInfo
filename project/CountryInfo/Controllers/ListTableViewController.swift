@@ -63,7 +63,7 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
         // Cell for every row.
         
         if isSearching {
-            cell.textLabel?.text = filteredData[indexPath.row].name!
+            cell.textLabel?.text = (filteredData[indexPath.row].name! + " (" + filteredData[indexPath.row].alpha2Code! + ")" )
             // Cell content when user is searching.
         }
         else{
