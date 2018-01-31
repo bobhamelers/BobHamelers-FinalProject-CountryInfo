@@ -63,7 +63,7 @@ Second, this app has a connection with Firebase to store account settings and in
 7. The Tab Icons from the "Tab Bar Controller" in "Assets.xcassets"-->"star.imageset" and "Assets.xcassets"-->"earth-usa.imageset" are downloaded by Bob Hamelers from [data](http://www.iconbeast.com/free/) .
 
 ### Purpose
-The purpose of this app is to give a user information about countries (for example: languages, currencies, regional blocs, flag, map etc.) . Next to that, a user can make lists with countries. Therefor he or she has to sign up/login to store this lists on a database. This app is usefull for every traveler, international worker and person that needs country information for his or her work/study.
+The purpose of this app is to give a user information about countries (for example: languages, currencies, regional blocs, flag, map etc.). Next to that, a user can make lists with countries. Therefor he or she has to sign up/login to store this lists on a database. This app is usefull for every traveler, international worker and person that needs country information for his or her work/study.
 
 #### About
 The information and selection of countries comes from an [API](https://restcountries.eu) . The developer of this app, Bob Hamelers, is not responsible for choices of countries and associated data. Political sensitivities are not attributable to the developer of this app, Bob Hamelers. Bob Hamelers does not guarantee any errors, bugs or other technical implications and cannot guarantee that the app will work at all times and at all places.
@@ -116,9 +116,6 @@ For many kinds of subjects it is useful to quickly have an app that displays inf
 
 #### External Components
 1. [FireBase](https://firebase.google.com) (use Cocoapods)
-''''
-pod install (firebase)
-''''
 2. [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) Eventually
 3. [PermisionScope](https://github.com/nickoneill/PermissionScope) Eventually
 4. [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) Eventually
