@@ -86,9 +86,7 @@ class ListFeederTableViewController: UITableViewController {
         return cell
     }
     
-    /// Function that add countries to array and set checkmarks when clicked on row.
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let information = informations[indexPath.row]
+    fileprivate func tableContent(_ tableView: UITableView, _ indexPath: IndexPath, _ information: Information) {
         // Cell for every row and indexpath.
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
@@ -100,6 +98,12 @@ class ListFeederTableViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             // Checkmark on and add country to countries array.
         }
+    }
+    
+    /// Function that add countries to array and set checkmarks when clicked on row.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let information = informations[indexPath.row]
+        tableContent(tableView, indexPath, information)
     }
     
     /// Function for cell content.
