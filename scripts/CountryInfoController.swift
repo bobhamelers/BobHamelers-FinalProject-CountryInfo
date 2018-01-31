@@ -25,13 +25,17 @@ class CountryInfoController {
         let url = URL(string: "https://restcountries.eu/rest/v2/all")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
-            if let data = data,
-                let information = try? jsonDecoder.decode([Information].self, from: data) {
-                    self.infomations = information
+            if let data = data {
+                do {
+                    let information = try jsonDecoder.decode([Information].self, from: data)
                     completion(information)
+                    print(information)
+                } catch {
+                    print(error)
+                }
             } else {
                 completion(nil)
-                return
+            return
             }
         }
         task.resume()
