@@ -21,4 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 SPECIAL ABOUT INFORMATION
-The information and selection of countries comes from an [API](https://restcountries.eu) . The developer of this app, Bob Hamelers, is not responsible for choices of countries and associated data. Political sensitivities are not attributable to the developer of this app, Bob Hamelers. Bob Hamelers does not guarantee any errors, bugs or other technical implications and cannot guarantee that the app will work at all times and at all places.
+The information and selection of countries comes from an [API](https://restcountries.eu) . 
+The developer of this app, Bob Hamelers, is not responsible for choices of countries and associated data. 
+Political sensitivities are not attributable to the developer of this app, Bob Hamelers. 
+Bob Hamelers does not guarantee any errors, bugs or other technical implications and 
+cannot guarantee that the app will work at all times and at all places.
