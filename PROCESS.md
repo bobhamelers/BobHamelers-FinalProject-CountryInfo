@@ -1,10 +1,10 @@
 # BobHamelers-FinalProject-CountryInfo
 
-Title: CountryInfo
+Title (application name): CountryInfo (Country Informer)
 
-Name: Bob Hamelers
+Name (developer): Bob Hamelers
 
-Studentnumber: 11055901
+Studentnumber University of Amsterdam: 11055901
 
 ## Logbook
 
@@ -78,5 +78,9 @@ In the morning I had daily standup with Jessy and David. We talked about what we
 ### day 23 (17), 30-01-2018
 The daily stand-up went fast in the morning and we talked short about our bugfixes from yesterday. Next to that, we had a shot look to eacht others code. Then I went to Martijn to ask if he could help me load SVG files without errors. Unfortunately Martijn could not fix it either and he said I should just leave it for a while. I found that very disappointing, since the layout became a lot more interesting with the images of the countries (as I had seen in some countries). I had asked also Marijn and Tim, but both had no solution. I have looked at an API with JP(E)G or PNG files, but these APIs do not return the same list of countries (about 12 countries that do not exist). Moreover, there is not enough time to get this fully operational without help. Unfortunately, I have to do it without flag in my CountryTableViewController. Marijn said that he attaches great importance to removing all code, layout in the storyboard and podfiles, which had to do something with SVG files. So I went with pain in the heart to deinstall the podfiles, adjust my TableView and I delete my code. After that, I had some style questions for Marijn and he helped me to move my entire project to a 'project' folder on GitHub. Both deinstalling SVG images and transferring my project took a lot of time. After that I started working with BetterCodeHub. Unfortunately, this did not go smoothly either. I cannot write a unique function shorter (with methods it only gets longer) and after checking with Marijn I had to leave the problem with this function, he said. Since students miss standard two guidlines on BetterCodeHub and I missed two guidlines for this long special function, I had a 5 on BetterCodeHub. However, I cannot do much about this. The only thing I can still do is describe certain things that are described several times, once. Unfortunately this did not work and I really need help from a supervisor or tech assistant. As last I made some changes in my comments and layout. Although I have worked hard today, a lot has not succeeded, in consultation with supervisors . I hope tommorow will be a better day.
 
+### day 24 (18), 31-01-2018
+Today I have tried to better my code in accompience with BetterCodeHub. I didn't fullfill the job fully, but I made some progress. Next to that, I fixed in a lot of files small text fails and layout points. In addition to that, I add a LICENSE, add Screenshots and make better code en better md files.
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/bobhamelers/BobHamelers-FinalProject-CountryInfo?branch=master)](https://bettercodehub.com/)
+### day 25 (19), 01-01-2018
+Today I have written my hole REPORT.md and I have made everywhere some small improvements. 
+
