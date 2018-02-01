@@ -82,5 +82,5 @@ The daily stand-up went fast in the morning and we talked short about our bugfix
 Today I have tried to better my code in accompience with BetterCodeHub. I didn't fullfill the job fully, but I made some progress. Next to that, I fixed in a lot of files small text fails and layout points. In addition to that, I add a LICENSE, add Screenshots and make better code en better md files.
 
 ### day 25 (19), 01-01-2018
-Today I have written my hole REPORT.md and I have made everywhere some small improvements. 
+Today I have written my hole REPORT.md and I have made everywhere some small improvements. Next to that I have made a create alert extension, to better my code, with help of Emma.
 
