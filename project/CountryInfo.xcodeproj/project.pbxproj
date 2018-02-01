@@ -119,11 +119,11 @@
 		180E644B20079CDE008408EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1843A504202354F90057454F /* CreateAlert.swift */,
 				18C67FF2200CDB7A00E4B84B /* Information.swift */,
 				18C6800320115F1400E4B84B /* List.swift */,
 				180E64592007F237008408EF /* User.swift */,
 				18C67FE82008F9F700E4B84B /* Gif.swift */,
-				1843A504202354F90057454F /* CreateAlert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -2,6 +2,8 @@
 //  CreateAlert.swift
 //  CountryInfo
 //
+//  Here you can find an extension for an alert, used in LoginViewController, SignUpViewController and ListFeederTableViewController.
+//
 //  Created by Bob Hamelers on 01/02/2018.
 //  Copyright © 2018 Bob Hamelers. All rights reserved.
 //
