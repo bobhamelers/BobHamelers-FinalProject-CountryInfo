@@ -1,10 +1,10 @@
 # BobHamelers-FinalProject-CountryInfo
 
-Title: CountryInfo
+Title (application name): CountryInfo (Country Informer)
 
-Name: Bob Hamelers
+Name (developer): Bob Hamelers
 
-Studentnumber: 11055901
+Studentnumber University of Amsterdam: 11055901
 
 ## Styleguide
 
