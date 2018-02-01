@@ -8,7 +8,7 @@ Studentnumber University of Amsterdam: 11055901
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/bobhamelers/BobHamelers-FinalProject-CountryInfo?branch=master)](https://bettercodehub.com/)
 ![Alt Text](https://camo.githubusercontent.com/d3df899a102b55da861042ec3f6452e2f430f71b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53776966742d342e302d6565346633372e737667)
-![Alt Text](hhttps://camo.githubusercontent.com/a6f9d213bbc7fa752252b25d0b07ce1b3122a6ae/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d732d694f532d3333333333332e737667)
+![Alt Text](https://camo.githubusercontent.com/a6f9d213bbc7fa752252b25d0b07ce1b3122a6ae/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d732d694f532d3333333333332e737667)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Paragraph Summary
