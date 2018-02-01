@@ -35,6 +35,8 @@ Studentnumber University of Amsterdam: 11055901
         4. Hardest Parts (by beginning)
 3. Visualisation of Minimum Viable Product (MVP)
 4. Logbook
+5. Author
+6. License
 
 
 ## Product
@@ -179,3 +181,11 @@ Date | Text
 31-01-2018 | Today I have tried to better my code in accompience with BetterCodeHub. I didn't fullfill the job fully, but I made some progress. Next to that, I fixed in a lot of files small text fails and layout points. In addition to that, I add a LICENSE, add Screenshots and make better code en better md files.
 01-01-2018 | Today I have written my hole REPORT.md and I have made everywhere some small improvements. Next to that I have made a create alert extension, to better my code, with help of Emma. I have some warnings still in my workspace, but Emma said I couldn't solve them and it was okay. 
 
+
+## Author
+
+[Bob Hamelers](https://github.com/bobhamelers) App submitted to Minor Programming University of Amsterdam.
+
+## License
+
+Copyright © 2018 Bob Hamelers. Released under the MIT License.
