@@ -111,17 +111,6 @@ class ListFeederTableViewController: UITableViewController {
         // Cell content.
     }
     
-    /// Create alert function that displays a popup.
-    func createAlert (title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-        // Alert function with title (Okay) and message for different alerts.
-    }
-    
-    
     /// Function that prepares unwind segue for ListsTableViewController when an user clicks on save button and call of function updateSaveButtonState.
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {

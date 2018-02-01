@@ -18,6 +18,7 @@
 		1833F8F720039B6C006EAE22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F620039B6C006EAE22 /* Assets.xcassets */; };
 		1833F8FA20039B6C006EAE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1833F8F820039B6C006EAE22 /* LaunchScreen.storyboard */; };
 		1843A5012020BF5C0057454F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1843A5002020BF5B0057454F /* GoogleService-Info.plist */; };
+		1843A505202354F90057454F /* CreateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843A504202354F90057454F /* CreateAlert.swift */; };
 		18C67FE92008F9F700E4B84B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FE82008F9F700E4B84B /* Gif.swift */; };
 		18C67FEF200922D000E4B84B /* world.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18C67FEE200922D000E4B84B /* world.gif */; };
 		18C67FF1200CCA5300E4B84B /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */; };
@@ -50,6 +51,7 @@
 		1833F8F920039B6C006EAE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1833F8FB20039B6C006EAE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1843A5002020BF5B0057454F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1843A504202354F90057454F /* CreateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlert.swift; sourceTree = "<group>"; };
 		18C67FE82008F9F700E4B84B /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		18C67FEE200922D000E4B84B /* world.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = world.gif; sourceTree = "<group>"; };
 		18C67FF0200CCA5300E4B84B /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountriesTableViewController.swift; path = CountryInfo/Controllers/CountriesTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -121,6 +123,7 @@
 				18C6800320115F1400E4B84B /* List.swift */,
 				180E64592007F237008408EF /* User.swift */,
 				18C67FE82008F9F700E4B84B /* Gif.swift */,
+				1843A504202354F90057454F /* CreateAlert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				18C68016201608E300E4B84B /* ListTableViewCell.swift in Sources */,
 				18C67FF7200CDB7B00E4B84B /* Information.swift in Sources */,
 				18C6800420115F1400E4B84B /* List.swift in Sources */,
+				1843A505202354F90057454F /* CreateAlert.swift in Sources */,
 				1833F8F220039B6B006EAE22 /* CountryInfoController.swift in Sources */,
 				18C680122015042800E4B84B /* ListFeederTableViewController.swift in Sources */,
 				180E645A2007F237008408EF /* User.swift in Sources */,
