@@ -17,7 +17,7 @@ class CountryTableViewController: UITableViewController {
 
     // MARK: Properties.
     let countryInfoController = CountryInfoController()
-    let sectionTitles = ["Name country", "Basic codes of country", "Calling Codes and Timezones", "Basic geographical information", "Regional Partnerships", "Currencies", "Languages"]
+    let sectionTitles = ["Name country", "Basic codes of country", "Calling codes and timezones", "Basic geographical information", "Regional partnerships", "Currencies", "Languages"]
     var informations = [Information]()
     var countryInfo = [Information]()
     

@@ -3,8 +3,8 @@
 //  CountryInfo
 //
 //  Information struct definition, used in CountryInfoController, CountriesTableViewController, CountryTableViewController, ListsTableViewController, ListTableViewController, ListFeederTableViewController and ListChangerTableViewController.
+//  It is used to store all the country data in a struct.
 //  Is used for get data information from JSON API from https://restcountries.eu/rest/v2/all (https://restcountries.eu) .
-//  Some lines are intentional outcommented so developers can use this swift file in the future.
 //  This file is generated with help of https://json4swift.com
 //
 //  Created by Bob Hamelers on 19/01/2018.
@@ -21,24 +21,17 @@ struct Information : Codable {
     let alpha3Code : String?
     let callingCodes : [String]?
     let capital : String?
-//    let altSpellings : [String]?
     let region : String?
     let subregion : String?
     let population : Int?
-//    let latlng : [Int]?
     let demonym : String?
-//    let area : Double?
-//    let gini : Double?
     let timezones : [String]?
     let borders : [String]?
-//    let nativeName : String?
     let numericCode : String?
     let currencies : [Currencies]?
     let languages : [Languages]?
-//    let translations : Translations?
     let flag : String?
     let regionalBlocs : [RegionalBlocs]?
-//    let cioc : String?
 }
 
 struct Currencies : Codable {
@@ -53,18 +46,6 @@ struct Languages : Codable {
     let name : String?
     let nativeName : String?
 }
-//struct Translations : Codable {
-//    let de : String?
-//    let es : String?
-//    let fr : String?
-//    let ja : String?
-//    let it : String?
-//    let br : String?
-//    let pt : String?
-//    let nl : String?
-//    let hr : String?
-//    let fa : String?
-//}
 
 struct RegionalBlocs : Codable {
     let acronym : String?
