@@ -75,7 +75,7 @@ Second, this app has a connection with Firebase to store account settings and in
 7. The Tab Icons from the "Tab Bar Controller" in "Assets.xcassets"-->"star.imageset" and "Assets.xcassets"-->"earth-usa.imageset" are downloaded by Bob Hamelers from [data](http://www.iconbeast.com/free/) .
 
 ### Purpose
-The purpose of this app is to give a user information about countries (for example: languages, currencies, regional blocs, flag, map etc.). Next to that, a user can make lists with countries. Therefor he or she has to sign up/login to store this lists on a database. This app is usefull for every traveler, international worker and person that needs country information for his or her work/study.
+The purpose of this app is to give an user information about countries (for example: languages, currencies, regional blocs, flag, map etc.). Next to that, an user can make lists with countries. Therefor he or she has to sign up/login to store this lists on a database. This app is usefull for every traveler, international worker and person that needs country information for his or her work/study.
 
 #### About
 The information and selection of countries comes from an [API](https://restcountries.eu) . The developer of this app, Bob Hamelers, is not responsible for choices of countries and associated data. Political sensitivities are not attributable to the developer of this app, Bob Hamelers. Bob Hamelers does not guarantee any errors, bugs or other technical implications and cannot guarantee that the app will work at all times and at all places.
@@ -143,8 +143,7 @@ It will be hard to get a full list of countries with information about each coun
 
 
 ## Visualisation of Minimum Viable Product (MVP)
-![alt text](https://raw.githubusercontent.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/master/doc./Visualisation.png)
-
+![alt text](https://raw.githubusercontent.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/master/doc./VisualisationSecond.png)
 
 ## Logbook
 
@@ -173,7 +172,8 @@ Date | Text
 28-01-2018 | Today I have worked on my Launchscreen and I have changed titles of TableViewControllers and did some changes in the layout. After that, I have installed a pod for SVG images but it didn't succeeded to implement it.
 29-01-2018 | In the morning I had daily standup with Jessy and David. We talked about what we are going to do this week. After that, I have fixed my errors with checkmarks and display in the CountryTableViewController. It was difficult, but it is fixed now. Next to that, I commented all the files and controllers and I fixed small errors everywhere. With some help of Marijn, I have kind of fixed my SVG images but it has still bugs. Marijn said that I have to ask Martijn for it, tommorow, to fix this bugs, because he didn't know.
 30-01-2018 | The daily stand-up went fast in the morning and we talked short about our bugfixes from yesterday. Next to that, we had a shot look to eacht others code. Then I went to Martijn to ask if he could help me load SVG files without errors. Unfortunately Martijn could not fix it either and he said I should just leave it for a while. I found that very disappointing, since the layout became a lot more interesting with the images of the countries (as I had seen in some countries). I had asked also Marijn and Tim, but both had no solution. I have looked at an API with JP(E)G or PNG files, but these APIs do not return the same list of countries (about 12 countries that do not exist). Moreover, there is not enough time to get this fully operational without help. Unfortunately, I have to do it without flag in my CountryTableViewController. Marijn said that he attaches great importance to removing all code, layout in the storyboard and podfiles, which had to do something with SVG files. So I went with pain in the heart to deinstall the podfiles, adjust my TableView and I delete my code. After that, I had some style questions for Marijn and he helped me to move my entire project to a 'project' folder on GitHub. Both deinstalling SVG images and transferring my project took a lot of time. After that I started working with BetterCodeHub. Unfortunately, this did not go smoothly either. I cannot write a unique function shorter (with methods it only gets longer) and after checking with Marijn I had to leave the problem with this function, he said. Since students miss standard two guidlines on BetterCodeHub and I missed two guidlines for this long special function, I had a 5 on BetterCodeHub. However, I cannot do much about this. The only thing I can still do is describe certain things that are described several times, once. Unfortunately this did not work and I really need help from a supervisor or tech assistant. As last I made some changes in my comments and layout. Although I have worked hard today, a lot has not succeeded, in consultation with supervisors . I hope tommorow will be a better day.
-
+31-01-2018 | Today I have tried to better my code in accompience with BetterCodeHub. I didn't fullfill the job fully, but I made some progress. Next to that, I fixed in a lot of files small text fails and layout points. In addition to that, I add a LICENSE, add Screenshots and make better code en better md files.
+01-01-2018 | Today I have written my hole REPORT.md and I have made everywhere some small improvements.
 
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/bobhamelers/BobHamelers-FinalProject-CountryInfo?branch=master)](https://bettercodehub.com/)
