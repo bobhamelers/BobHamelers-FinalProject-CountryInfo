@@ -57,7 +57,7 @@ Studentnumber University of Amsterdam: 11055901
 ![Alt Text](https://raw.githubusercontent.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/master/doc./screenshots/ScreenShot%20EditListScreen.png)
 
 ### Copyright Statement
-This document is a public domain release. See for more information the LICENSE file in this repository.
+This document is a public domain release. See for more information the [LICENSE](https://github.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/blob/master/LICENSE) file in this repository.
 
 ### Install
 To install this app, download the hole project folder.
@@ -188,4 +188,4 @@ Date | Text
 
 ## License
 
-Copyright © 2018 Bob Hamelers. Released under the MIT License.
+Copyright © 2018 Bob Hamelers. Released under the [MIT License](https://github.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/blob/master/LICENSE).
