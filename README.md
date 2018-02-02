@@ -13,14 +13,15 @@ Studentnumber University of Amsterdam: 11055901
 
 ## Paragraph Summary
 1. Product
-    1. Screenshot Overview
-    2. Copyright Statement
-    3. Install
+    1. Product Demo (Screencast)
+    2. Screenshot Overview
+    3. Copyright Statement
+    4. Install
         1. Essential External Components
         2. Essential External Images and Files
-    4. Purpose
+    5. Purpose
         1. About
-    5. Functionality and Working
+    6. Functionality and Working
 2. Proposal
     1. Summary
     2. Problem and Solution
@@ -40,6 +41,9 @@ Studentnumber University of Amsterdam: 11055901
 
 
 ## Product
+
+### Product Demo (screencast)
+[Youtube Link](https://youtu.be/LJ1dOWvQxxg)
 
 ### Screenshot Overview
 
