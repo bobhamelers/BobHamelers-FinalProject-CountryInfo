@@ -45,8 +45,6 @@ Studentnumber University of Amsterdam: 11055901
 ### Product Demo (screencast)
 [Youtube Link](https://www.youtube.com/watch?v=LJ1dOWvQxxg&t=4s)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LJ1dOWvQxxg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ### Screenshot Overview
 
 ![Alt Text](https://raw.githubusercontent.com/bobhamelers/BobHamelers-FinalProject-CountryInfo/master/doc./screenshots/ScreenShot%20LaunchScreen.png)
