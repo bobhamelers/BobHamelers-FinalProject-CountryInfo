@@ -43,7 +43,7 @@ Studentnumber University of Amsterdam: 11055901
 ## Product
 
 ### Product Demo (screencast)
-[Youtube Link](https://www.youtube.com/watch?v=LJ1dOWvQxxg&t=4s)
+[Youtube Link](https://www.youtube.com/watch?v=AECD08TX1RA)
 
 ### Screenshot Overview
 
